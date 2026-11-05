@@ -101,6 +101,10 @@ class IntegrityTests(unittest.TestCase):
         self.change_log(lambda log: log.update(status="failed"))
         with self.assertRaisesRegex(ValueError, "完整结束"): compare(self.left, self.right)
 
+    def test_running_attempt_in_completed_log_is_rejected(self):
+        self.change_log(lambda log: log["cases"][0]["calls"][0].update(status="running"))
+        with self.assertRaisesRegex(ValueError, "未结束"): compare(self.left, self.right)
+
     def test_mock_is_not_a_real_comparison(self):
         self.change_log(lambda log: log.update(model_name="LOCAL_MOCK"))
         with self.assertRaisesRegex(ValueError, "模拟回显"): compare(self.left, self.right)

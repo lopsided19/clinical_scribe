@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import http.client
 import socket
 import time
 import urllib.error
@@ -64,20 +65,30 @@ class ModelClient:
                     raise CaseError("MODEL_RESPONSE_TOO_LARGE", "模型响应超过长度上限。")
                 try:
                     payload = strict_json(raw.decode("utf-8"))
+                    if not isinstance(payload, dict):
+                        raise ValueError("response must be an object")
+                    # Usage may be available even when generation is truncated or invalid.
+                    usage = payload.get("usage")
+                    if isinstance(usage, dict):
+                        call_log["usage"] = {key: usage[key] for key in ("prompt_tokens", "completion_tokens", "total_tokens")
+                                             if type(usage.get(key)) is int and usage[key] >= 0}
+                    choices = payload.get("choices")
+                    if not isinstance(choices, list) or not choices or not isinstance(choices[0], dict):
+                        raise ValueError("choices must contain a choice object")
                     choice = payload["choices"][0]
                     finish_reason = choice.get("finish_reason")
-                    call_log["finish_reason"] = finish_reason
+                    call_log["finish_reason"] = finish_reason if finish_reason in (None, "stop", "length", "content_filter", "tool_calls", "function_call") else "unrecognized"
                     if finish_reason == "length":
                         raise CaseError("MODEL_TRUNCATED", "模型响应达到 token 上限，正文可能被截断。")
+                    if finish_reason not in (None, "stop"):
+                        raise CaseError("MODEL_FINISH_REASON_INVALID", "模型未以约定的正常完成状态结束。")
+                    if not isinstance(choice.get("message"), dict):
+                        raise ValueError("message must be an object")
                     content = choice["message"]["content"]
                     if isinstance(content, list):
                         content = "".join(part["text"] for part in content if isinstance(part, dict) and part.get("type") == "text")
                     if not isinstance(content, str) or not content.strip():
                         raise ValueError("empty model content")
-                    usage = payload.get("usage")
-                    if isinstance(usage, dict):
-                        call_log["usage"] = {key: usage[key] for key in ("prompt_tokens", "completion_tokens", "total_tokens")
-                                             if type(usage.get(key)) is int and usage[key] >= 0}
                 except (ValueError, KeyError, IndexError, TypeError, UnicodeError) as exc:
                     raise CaseError("MODEL_RESPONSE_INVALID", "模型接口返回结构不符合 Chat Completions 协议。") from exc
                 call_log.update(status="success", response_sha256=digest(content))
@@ -95,6 +106,8 @@ class ModelClient:
                 error = CaseError("MODEL_TIMEOUT" if retryable else "MODEL_CONNECTION_ERROR", "无法完成模型连接或请求。")
             except CaseError as exc:
                 error = exc
+            except http.client.HTTPException:
+                error = CaseError("MODEL_RESPONSE_INVALID", "模型 HTTP 响应不完整或格式无效。")
             except OSError:
                 error = CaseError("MODEL_CONNECTION_ERROR", "模型连接被中断。")
             finally:
@@ -102,9 +115,14 @@ class ModelClient:
                 call_log["duration_seconds"] = round(time.monotonic() - started, 4)
                 if error is not None:
                     call_log.update(status="failed", error_code=error.code)
+                elif call_log["status"] == "running":
+                    # Preserve a terminal attempt state even if an unexpected exception propagates.
+                    call_log.update(status="failed", error_code="MODEL_CLIENT_INTERNAL_ERROR")
             if error is not None:
                 if not retryable or retry >= settings["max_retries"]:
                     raise error
+                if len(case_log["calls"]) >= settings["max_calls_per_case"]:
+                    raise CaseError("CALL_BUDGET_EXCEEDED", "已达到该病例配置的调用预算，未等待或发起额外重试。")
                 delay = settings["retry_delay_seconds"] * (2 ** retry)
                 if self.deadline - time.monotonic() <= delay:
                     raise CaseError("TASK_TIMEOUT", "剩余时间不足以执行允许的重试。")

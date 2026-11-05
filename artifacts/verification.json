@@ -1,11 +1,11 @@
 {
-  "started_at": "2026-11-05T13:58:39.547183+00:00",
+  "started_at": "2026-11-05T14:19:11.966647+00:00",
   "python_version": "3.11.9",
   "kind": "engineering_verification_not_clinical_validation",
   "checks": {
     "unit_tests": {
       "passed": true,
-      "count": 167
+      "count": 175
     },
     "offline_review_script": {
       "passed": true,
@@ -29,7 +29,7 @@
     "batch_mock": {
       "kind": "LOCAL_MOCK_ENGINEERING_ONLY",
       "python": "3.11.9",
-      "run_directory": "artifacts/local_mock_20261105T074229522710Z/run",
+      "run_directory": "artifacts/local_mock_20261105T141903871897Z/run",
       "input_cases": 142,
       "successful_cases": 142,
       "schema_valid_cases": 142,
@@ -64,7 +64,7 @@
   },
   "package": {
     "file": "LOCAL_PREVIEW_algorithm.zip",
-    "sha256": "3b68eb2f258625ea1275f129d69be435885d164039c333245229d700c6952539",
+    "sha256": "77a32b5100fcb0650613591755899ab20914968845d2458a6e8796ddae09dacd",
     "files": [
       "main.py",
       "requires.txt",
@@ -94,7 +94,7 @@
     "settings.json": "9113279a82c64decb33f09f2053fe7361edf1afc4e7512e594b759498c1a8d93",
     "requires.txt": "0a0f3c188d8ee8bcab01ff2e9b1dbf0343df50c666c18ccfb5815ed3765fdc9e",
     "src/__init__.py": "602eef3a968fe055004647030a63b98342445e57d4f607a2c1ae8164c8f55468",
-    "src/client.py": "0b993f096da71779ab5092045e11ab338d3f0e52ce72d612c05590afd5d72a3d",
+    "src/client.py": "c4e155b0f2c8e5d746453f34895a72a7f82a173177ca14849d3dd51cb3d96605",
     "src/clinical_text.py": "7117e4bd9ec71d9f6bfdeb69659ef1d6f3b30a292ca24371a316772d0f67ad15",
     "src/config.py": "f57fb0723e38511e0c7fd66437573095baaf84c745475ffc9294032c57f0bf85",
     "src/coverage.py": "a40ede7847cfad20db5ea0e8c77c95323c5ca5ea64558db88779e1e2947c3b98",
@@ -113,5 +113,5 @@
     "completed": false,
     "reason": "赛方模型接口和最终限制尚未提供"
   },
-  "finished_at": "2026-11-05T13:58:44.416257+00:00"
+  "finished_at": "2026-11-05T14:19:17.232563+00:00"
 }

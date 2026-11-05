@@ -44,6 +44,8 @@ def load_verified_run(directory: Path) -> tuple[list, list, dict]:
         calls = row.get("calls")
         if not isinstance(calls, list) or any(not isinstance(call, dict) for call in calls):
             raise ValueError("调用日志无效")
+        if any(call.get("status") not in ("success", "failed") for call in calls):
+            raise ValueError("已完成运行中存在未结束或无效状态的调用日志")
         for item in [row, *calls]:
             duration = item.get("duration_seconds")
             if type(duration) not in (float, int) or not math.isfinite(duration) or duration < 0:
