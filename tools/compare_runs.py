@@ -64,7 +64,7 @@ def compare(baseline: Path, candidate: Path, annotations: dict | None = None) ->
     settings_changes = {key: {"baseline": left["settings"].get(key), "candidate": right["settings"].get(key)}
         for key in sorted(set(left["settings"]) | set(right["settings"]))
         if left["settings"].get(key) != right["settings"].get(key)}
-    summary_keys = ("input_cases", "successful_cases", "schema_valid_cases", "cases_with_rule_flags", "rule_flag_counts", "annotated_fact_coverage", "run")
+    summary_keys = ("input_cases", "successful_cases", "reported_successful_cases", "invalid_input_cases", "failed_cases", "schema_valid_cases", "cases_with_rule_flags", "rule_flag_counts", "annotated_fact_coverage", "run")
     return {"kind": "paired_engineering_comparison_not_clinical_score", "pairs": pairs, "transitions": transitions,
         "integrity": {"verified": True, "run_log_sha256": [file_digest(p / "run_log.json") for p in (baseline, candidate)],
                       "note": "验证文件与日志一致性；哈希不是签名，不能证明服务身份或阻止联合篡改。"},

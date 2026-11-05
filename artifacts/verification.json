@@ -1,11 +1,11 @@
 {
-  "started_at": "2026-11-05T07:37:23.516407+00:00",
+  "started_at": "2026-11-05T07:42:41.125610+00:00",
   "python_version": "3.11.9",
   "kind": "engineering_verification_not_clinical_validation",
   "checks": {
     "unit_tests": {
       "passed": true,
-      "count": 139
+      "count": 149
     },
     "offline_review_script": {
       "passed": true,
@@ -29,7 +29,7 @@
     "batch_mock": {
       "kind": "LOCAL_MOCK_ENGINEERING_ONLY",
       "python": "3.11.9",
-      "run_directory": "artifacts/local_mock_20261105T073711963525Z/run",
+      "run_directory": "artifacts/local_mock_20261105T074229522710Z/run",
       "input_cases": 142,
       "successful_cases": 142,
       "schema_valid_cases": 142,
@@ -64,7 +64,7 @@
   },
   "package": {
     "file": "LOCAL_PREVIEW_algorithm.zip",
-    "sha256": "6d17554f728e69bc9a80061dd65bb7ba5853d45e11f80721980a1a6c69e7a557",
+    "sha256": "73e178d013eae2c4fb80c0b9ccd2bba2467e052936eddcc8330fbebad977ce5d",
     "files": [
       "main.py",
       "requires.txt",
@@ -113,5 +113,5 @@
     "completed": false,
     "reason": "赛方模型接口和最终限制尚未提供"
   },
-  "finished_at": "2026-11-05T07:37:26.760318+00:00"
+  "finished_at": "2026-11-05T07:42:44.765256+00:00"
 }

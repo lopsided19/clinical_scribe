@@ -12,10 +12,9 @@ from string import Template
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.errors import CaseError
 from src.facts import ledger
 from src.io_utils import digest, read_json
-from src.protocol import validate_case, validate_input
+from src.protocol import validate_input
 from tools.evaluate import evaluate
 
 LABELS = {"positive": "阳性/已记录", "negative": "阴性", "missing": "未提供", "uncertain": "不确定",
@@ -54,16 +53,9 @@ def render(inputs: list, outputs: list, title="临床智录 · 结果复核", lo
     for i, case in enumerate(inputs):
         result = outputs[i] if i < len(outputs) and isinstance(outputs[i], dict) else {}
         facts = []
-        try:
-            validate_case(case)
-        except CaseError as exc:
-            if case["case_id"] in annotation_map:
-                raise ValueError("无效病例不能使用关键事实标注") from exc
-            assessment = {"status": "failed", "schema_valid": False,
-                "issues": [{"code": exc.code, "message": exc.message}], "fact_coverage": {"missing": [], "total": 0, "covered": 0}}
-        else:
-            ann = {"cases": [annotation_map[case["case_id"]]]} if case["case_id"] in annotation_map else None
-            assessment = evaluate([case], [result], annotations=ann)["cases"][0]
+        ann = {"cases": [annotation_map[case["case_id"]]]} if case["case_id"] in annotation_map else None
+        assessment = evaluate([case], [result], annotations=ann)["cases"][0]
+        if assessment["input_valid"]:
             facts = ledger(case)["facts"]
         valid = assessment["schema_valid"] and assessment["status"] == "success"
         flagged = bool(assessment["issues"])
@@ -96,6 +88,8 @@ def render(inputs: list, outputs: list, title="临床智录 · 结果复核", lo
             body += '<details><summary>查看原始输出</summary><p>' + e(json.dumps(result, ensure_ascii=False, indent=2)) + '</p></details>'
         warnings = "".join('<div class="warning">' + e(issue.get("message") or "；".join(issue.get("messages", [])) or issue["code"]) + '</div>' for issue in assessment["issues"])
         warnings = warnings or '<p class="muted">未触发已实现的规则；仍需核对医学内容。</p>'
+        if coverage.get("mode") == "unavailable_invalid_input":
+            warnings += '<p class="muted">输入无效，事实覆盖无法计算；该病例仍保留在批次中。</p>'
         if coverage["total"]:
             label = "标注事实" if coverage.get("mode") == "annotated" else "启发式候选"
             warnings += f'<p>{label}词法覆盖：{coverage["covered"]} / {coverage["total"]}。该指标不评价医学充分性。</p>'

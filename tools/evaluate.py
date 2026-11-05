@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.grounding import audit_record, numbers
+from src.errors import CaseError
 from src.coverage import coverage_report, validate_annotations, source_conflicts
 from src.io_utils import atomic_json, read_json
 from src.protocol import validate_case, validate_input, validate_record
@@ -31,11 +32,20 @@ def evaluate(inputs: list, outputs: list, log: dict | None = None, annotations: 
             raise ValueError("标注与当前输入没有对应病例")
     rows, counts = [], Counter()
     for index, case in enumerate(inputs):
-        validate_case(case)
+        input_error = None
+        try:
+            validate_case(case)
+        except CaseError as exc:
+            input_error = {"code": exc.code, "message": exc.message}
         if case["case_id"] in annotation_map:
+            if input_error:
+                raise ValueError("无效病例不能使用关键事实标注：" + case["case_id"])
             validate_annotations(case, annotation_map[case["case_id"]])
         supported_record = None
-        row = {"case_id": case["case_id"], "schema_valid": False, "status": "missing", "issues": []}
+        row = {"case_id": case["case_id"], "schema_valid": False, "status": "missing", "issues": [],
+               "input_valid": input_error is None, "input_error": input_error}
+        if input_error:
+            row["issues"].append({"code": "INPUT_CASE_INVALID", "message": input_error["message"]})
         result = outputs[index] if index < len(outputs) else None
         if not isinstance(result, dict) or result.get("case_id") != case["case_id"]:
             row["issues"].append({"code": "CASE_ALIGNMENT_ERROR"})
@@ -46,9 +56,11 @@ def evaluate(inputs: list, outputs: list, log: dict | None = None, annotations: 
             row["schema_valid"] = (result.get("medical_record") is None and isinstance(result.get("error"), dict)
                 and set(result["error"]) == {"code", "message"}
                 and all(isinstance(result["error"][k], str) for k in ("code", "message")))
+            if not row["schema_valid"]:
+                row["issues"].append({"code": "FAILURE_ENVELOPE_INVALID"})
         elif result.get("status") == "success":
             row["status"] = "success"
-            errors = validate_record(result.get("medical_record"), case)
+            errors = ["输入病例无效，无法核验成功输出的来源。"] if input_error else validate_record(result.get("medical_record"), case)
             if result.get("error") is not None:
                 errors.append("成功结果 error 必须为 null")
             row["schema_valid"] = not errors
@@ -63,15 +75,26 @@ def evaluate(inputs: list, outputs: list, log: dict | None = None, annotations: 
                 row["factual_number_set_precision"] = len(emitted & available) / len(emitted) if emitted else None
                 row["number_set_coverage"] = len(emitted & available) / len(available) if available else None
                 row["body_characters"] = sum(len(record[k]) for k in ("case_features", "diagnostic_discussion", "plan"))
-        row["fact_coverage"] = coverage_report(case, supported_record, annotation_map.get(case["case_id"]))
-        row["potential_source_conflicts"] = source_conflicts(case)
+        else:
+            row["status"] = "invalid"
+            row["issues"].append({"code": "STATUS_INVALID"})
+        if input_error:
+            row["fact_coverage"] = {"mode": "unavailable_invalid_input", "total": None,
+                "covered": None, "recall": None, "missing": [], "note": "输入无效，无法建立可核验事实分母。"}
+            row["potential_source_conflicts"] = None
+        else:
+            row["fact_coverage"] = coverage_report(case, supported_record, annotation_map.get(case["case_id"]))
+            row["potential_source_conflicts"] = source_conflicts(case)
         for issue in row["issues"]:
             counts[issue["code"]] += 1
         rows.append(row)
     report = {"kind": "engineering_metrics_not_clinical_score", "input_cases": len(inputs),
         "output_cases": len(outputs), "count_and_order_match": len(inputs) == len(outputs) and all(
             isinstance(output, dict) and output.get("case_id") == case["case_id"] for case, output in zip(inputs, outputs)),
-        "successful_cases": sum(r["status"] == "success" for r in rows),
+        "successful_cases": sum(r["status"] == "success" and r["schema_valid"] for r in rows),
+        "reported_successful_cases": sum(r["status"] == "success" for r in rows),
+        "invalid_input_cases": sum(not r["input_valid"] for r in rows),
+        "failed_cases": sum(r["status"] == "failed" for r in rows),
         "schema_valid_cases": sum(r["schema_valid"] for r in rows),
         "cases_with_rule_flags": sum(bool(r["issues"]) for r in rows),
         "rule_flag_counts": dict(counts), "cases": rows,
