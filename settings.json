@@ -1,0 +1,21 @@
+{
+  "pipeline": "grounded",
+  "max_calls_per_case": 1,
+  "max_retries": 0,
+  "request_timeout_seconds": 120,
+  "total_timeout_seconds": 1800,
+  "retry_delay_seconds": 1,
+  "max_response_bytes": 2000000,
+  "max_case_characters": 100000,
+  "max_input_bytes": 20000000,
+  "max_tokens": 4096,
+  "temperature": 0,
+  "top_p": 1,
+  "seed": 2026,
+  "send_seed": false,
+  "send_response_format": false,
+  "send_sampling_parameters": true,
+  "enable_repair": false,
+  "quality_action": "warn",
+  "grounding_checks": true
+}

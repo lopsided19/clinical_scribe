@@ -1,0 +1,12 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+*.yml text eol=lf
+*.pdf binary
+*.zip binary
+.env.example text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+data/prepared/*/LICENSE.txt -text whitespace=-blank-at-eol

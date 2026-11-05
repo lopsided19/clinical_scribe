@@ -1,0 +1,97 @@
+{
+  "purpose": "offline development only; not an approved competition retrieval corpus",
+  "cmb_hf_revision": "935fbc09edf1303d89872b21265ff597f426ac0d",
+  "cmb_repository_revision": "6c8ece46097dae736c6805dd3b831e1a38c08971",
+  "files": [
+    {
+      "file": "data/raw/cmb_clin.json",
+      "url": "https://huggingface.co/datasets/FreedomIntelligence/CMB/resolve/935fbc09edf1303d89872b21265ff597f426ac0d/CMB-Clin/CMB-Clin-qa.json",
+      "dataset": "CMB-Clin",
+      "license": "Apache-2.0 (publisher declaration)",
+      "sha256": "35cefc7cd46af080ebbd662e0b8e4babd4803205a5f0bec038acf4cdf33021af",
+      "bytes": 259904,
+      "retrieved_at": "2026-11-04T12:10:22.348630+00:00"
+    },
+    {
+      "file": "data/raw/CMB_DATA_CARD.md",
+      "url": "https://huggingface.co/datasets/FreedomIntelligence/CMB/resolve/935fbc09edf1303d89872b21265ff597f426ac0d/README.md",
+      "dataset": "CMB-Clin",
+      "license": "Apache-2.0",
+      "sha256": "522729bbc6721367b2093ab5092e1392cebe53eb80e2046954c30dd5333ff94d",
+      "bytes": 8713,
+      "retrieved_at": "2026-11-04T12:10:23.153442+00:00"
+    },
+    {
+      "file": "data/raw/CMB_LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/FreedomIntelligence/CMB/6c8ece46097dae736c6805dd3b831e1a38c08971/LICENSE",
+      "dataset": "CMB-Clin",
+      "license": "Apache-2.0",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357,
+      "retrieved_at": "2026-11-04T12:10:26.039583+00:00"
+    },
+    {
+      "file": "data/raw/mimic_demo/patients.csv.gz",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/hosp/patients.csv.gz",
+      "dataset": "MIMIC-IV Demo 2.2",
+      "license": "ODbL-1.0",
+      "sha256": "59dcc6cd8450ddf03ad32cc7d76e41caa4c9633541715987f590c74835cf6fae",
+      "bytes": 1083,
+      "retrieved_at": "2026-11-04T12:10:27.369159+00:00"
+    },
+    {
+      "file": "data/raw/mimic_demo/admissions.csv.gz",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/hosp/admissions.csv.gz",
+      "dataset": "MIMIC-IV Demo 2.2",
+      "license": "ODbL-1.0",
+      "sha256": "910b9f160ffdf1e08ea673585393f347c773ccc87d66875c627584a903ae8493",
+      "bytes": 11072,
+      "retrieved_at": "2026-11-04T12:10:28.661361+00:00"
+    },
+    {
+      "file": "data/raw/mimic_demo/d_labitems.csv.gz",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/hosp/d_labitems.csv.gz",
+      "dataset": "MIMIC-IV Demo 2.2",
+      "license": "ODbL-1.0",
+      "sha256": "72ea5f020469fd24543bd98ab3bd0a4f645a5a4b7802d9d52af20d736f9d76db",
+      "bytes": 13520,
+      "retrieved_at": "2026-11-04T12:10:29.812008+00:00"
+    },
+    {
+      "file": "data/raw/mimic_demo/labevents.csv.gz",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/hosp/labevents.csv.gz",
+      "dataset": "MIMIC-IV Demo 2.2",
+      "license": "ODbL-1.0",
+      "sha256": "d51a4cf1ea63245abe7d544b0d50a928e9ee2ec5eb9a5ce85500aed0bd6c6dfc",
+      "bytes": 1963979,
+      "retrieved_at": "2026-11-04T12:11:00.109075+00:00"
+    },
+    {
+      "file": "data/raw/mimic_demo/LICENSE.txt",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/LICENSE.txt",
+      "dataset": "MIMIC-IV Demo 2.2",
+      "license": "ODbL-1.0",
+      "sha256": "bcdfcd4f31c790e30fb645dc36414907172405897adff329ad379eed85d12017",
+      "bytes": 25815,
+      "retrieved_at": "2026-11-04T12:11:01.445302+00:00"
+    },
+    {
+      "file": "data/raw/mimic_demo/README.txt",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/README.txt",
+      "dataset": "MIMIC-IV Demo 2.2",
+      "license": "ODbL-1.0",
+      "sha256": "4eaae533164245e59e5eb70b52695c061900cdc067cebe508105706b4d10e393",
+      "bytes": 978,
+      "retrieved_at": "2026-11-04T12:11:02.619137+00:00"
+    },
+    {
+      "file": "data/raw/mimic_demo/SHA256SUMS.txt",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/SHA256SUMS.txt",
+      "dataset": "MIMIC-IV Demo 2.2",
+      "license": "ODbL-1.0",
+      "sha256": "19dfd55fac45035ba8e9f4c7e59180ee5184e877504f098e517a434d2646366a",
+      "bytes": 2966,
+      "retrieved_at": "2026-11-04T12:11:04.382198+00:00"
+    }
+  ]
+}

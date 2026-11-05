@@ -1,0 +1,100 @@
+{
+  "started_at": "2026-11-05T06:38:24.748597+00:00",
+  "python_version": "3.11.9",
+  "kind": "engineering_verification_not_clinical_validation",
+  "checks": {
+    "unit_tests": {
+      "passed": true,
+      "count": 66
+    },
+    "zip_deterministic": true,
+    "zip_minimal_root_layout": true,
+    "isolated_zip_smoke": {
+      "passed": true,
+      "calls": 1,
+      "outside_working_directory": true
+    },
+    "mock_results_rejected": true,
+    "batch_mock": {
+      "kind": "LOCAL_MOCK_ENGINEERING_ONLY",
+      "python": "3.11.9",
+      "run_directory": "artifacts/local_mock_20261105T063823238449Z/run",
+      "input_cases": 120,
+      "successful_cases": 120,
+      "schema_valid_cases": 120,
+      "model_calls": 120,
+      "note": "模拟接口仅回显输入；本结果不能证明医学质量或真实 Qwen 效果。"
+    },
+    "batch_source_matches_current": true,
+    "formal_env_not_created": true
+  },
+  "dataset_summary": {
+    "cmb": {
+      "raw": 74,
+      "eligible_heuristic_only": 22,
+      "quarantined": 52,
+      "dev": 16,
+      "holdout": 6
+    },
+    "mimic_demo": {
+      "patients_in_raw": 100,
+      "prepared_patients": 85,
+      "selected_labs": 2719,
+      "omitted": {
+        "outside_window_or_not_available_or_invalid_time": 73836,
+        "no_matching_admission": 28420,
+        "missing_value": 1011
+      },
+      "cutoff_rule": "admittime - 6h <= charttime <= storetime <= admittime + 6h; one eligible admission per subject",
+      "dev": 68,
+      "holdout": 17
+    },
+    "note": "公开病例仅用于开发；正式检索资料须经赛方允许。所有启发式筛选仍需人工审阅。"
+  },
+  "package": {
+    "file": "LOCAL_PREVIEW_algorithm.zip",
+    "sha256": "a9b528580465206c8b173af4aa7e26e46f02468d29ab102c62d9b0f2f9f33485",
+    "files": [
+      "main.py",
+      "requires.txt",
+      ".env.example",
+      "README.md",
+      "settings.json",
+      "src/__init__.py",
+      "src/client.py",
+      "src/config.py",
+      "src/errors.py",
+      "src/grounding.py",
+      "src/io_utils.py",
+      "src/pipeline.py",
+      "src/protocol.py",
+      "src/runner.py",
+      "prompts/extract.txt",
+      "prompts/repair.txt",
+      "prompts/system.txt"
+    ],
+    "status": "algorithm_source_prepared_not_validated_against_organizer_endpoint"
+  },
+  "code_files": {
+    "main.py": "a383848c99e3e9186152a90cc2b65a30bb3a4e4c88727e0bdff42008ee35f0a3",
+    "settings.json": "9113279a82c64decb33f09f2053fe7361edf1afc4e7512e594b759498c1a8d93",
+    "requires.txt": "0a0f3c188d8ee8bcab01ff2e9b1dbf0343df50c666c18ccfb5815ed3765fdc9e",
+    "src/__init__.py": "602eef3a968fe055004647030a63b98342445e57d4f607a2c1ae8164c8f55468",
+    "src/client.py": "0b993f096da71779ab5092045e11ab338d3f0e52ce72d612c05590afd5d72a3d",
+    "src/config.py": "f57fb0723e38511e0c7fd66437573095baaf84c745475ffc9294032c57f0bf85",
+    "src/errors.py": "073e2b2bc388dc712f3df6aecc36723767565718e45a0c912005f1b09147ea52",
+    "src/grounding.py": "01fe935fffc64dbffadff18f55cee0441b5608319d6a61b7878b434ee88010d8",
+    "src/io_utils.py": "6858bf1af597fd2c5eccce275a63e6e2fa150f6f448552db75acb72833404674",
+    "src/pipeline.py": "4050c6b5aafa4877c9f3c09a33c9e681332cd3714f4f23b6e36fac5ec1f78c49",
+    "src/protocol.py": "acb7728e370a0a1a1fb4ae6b14dc0197e4623a0b15762538dcd19410c21b2c0c",
+    "src/runner.py": "9737a772adde168bc6811d0cdf9c58b69aaa1c745b3fc6dc565d3f4c9fdbf5f7",
+    "prompts/extract.txt": "9ce9f6e552533e00c421dcb460a6e447cf474e5964966709ebfa06b803d2f56f",
+    "prompts/repair.txt": "a8873fac8dc3c24c0cf2afd72231379015e2bb24e292eedfb5a7c5b6594da0d4",
+    "prompts/system.txt": "77f87a0a95e630c515e183b85dc24fe24cac6ddc7103259b582f2d802fbe39ed"
+  },
+  "real_model_evaluation": {
+    "completed": false,
+    "reason": "赛方模型接口和最终限制尚未提供"
+  },
+  "finished_at": "2026-11-05T06:38:26.490414+00:00"
+}

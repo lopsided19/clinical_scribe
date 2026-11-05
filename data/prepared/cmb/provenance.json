@@ -1,0 +1,1172 @@
+[
+  {
+    "case_id": "CMB-000",
+    "upstream_id": "0",
+    "description_sha256": "936d0d861f4092587a549faefce7bb6acab5889cb0b125691e2521c28a3b543b",
+    "split": "dev",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-001",
+    "upstream_id": "1",
+    "description_sha256": "b8c5a7fa4f1e828837e8ca4d0f3f07471870f06d1f33100144d85a906a9b78da",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-002",
+    "upstream_id": "2",
+    "description_sha256": "432bdc0194e301fb86be24aa58b80148f7cb3751788bfcf3b8e5a33a50f793bf",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-003",
+    "upstream_id": "3",
+    "description_sha256": "dc649470a3b7290e5d11be6270f362799a5033445aa3df578935a48cdab49c92",
+    "split": "dev",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-004",
+    "upstream_id": "4",
+    "description_sha256": "27cf61b6a5ec120e0985d609137a2dd144d3bdf8a55eb0ba16ce86cdee2accc3",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "术后"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-005",
+    "upstream_id": "5",
+    "description_sha256": "f97d432d8009240b6bb90a39f2b3dfdec46380f51a0cf69fa74e31c5a629792c",
+    "split": "holdout",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-006",
+    "upstream_id": "6",
+    "description_sha256": "8d1c32878431e5a0a20a1d3ebc10824363f4289019720f48b9540b5454d72890",
+    "split": "dev",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-007",
+    "upstream_id": "7",
+    "description_sha256": "e0f406df893cadc36282c130de64c4fe3b82e8e8a1503a80a47dcf06d2cf86af",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-008",
+    "upstream_id": "8",
+    "description_sha256": "138a590ee0d6c5fea6cb279357ab923de0e2f051cd6641328956b114d49ad22f",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "确诊",
+      "给予"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-009",
+    "upstream_id": "9",
+    "description_sha256": "9b3de9be8426d539da2a978bb2bb712a823f56e4bae1cbfa54b7e9c21e141daa",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-010",
+    "upstream_id": "10",
+    "description_sha256": "65e6c99d785c08c77db72891031cf307aaa355cc97ca8d85acbf3be04b192353",
+    "split": "holdout",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-011",
+    "upstream_id": "11",
+    "description_sha256": "c7a67d7fedbe095a31e072e36f399b92133a9654685bf1c4c23182fe94c16f5e",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-012",
+    "upstream_id": "12",
+    "description_sha256": "fc0e33eca88ae2aca5999cb54f949ef04114fde0f3e2810051ed978d55e5f4cd",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-013",
+    "upstream_id": "13",
+    "description_sha256": "dd8dfca2e23dd7abd67d0b4dffe690e7b2848079dc3e9aa4c7709412807b7291",
+    "split": "holdout",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-014",
+    "upstream_id": "14",
+    "description_sha256": "d75132156270aa073fae69efd2f421599329f4d4604dd16503b4d0e77d4b11fe",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-015",
+    "upstream_id": "15",
+    "description_sha256": "61b1bf2138e1988a9fa0cd4a3ed48c46948ace0260fb6a66141a8bae719e5167",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "予以"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-016",
+    "upstream_id": "16",
+    "description_sha256": "0487b0620de9afb1e9b73653409c2a421c04bb57fc4a971f7d5f921e29c7a974",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "术后"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-017",
+    "upstream_id": "17",
+    "description_sha256": "d314ea8906c811f629ac0ecd35bd2abb04f8109a7cf57abe17d953ed5f59e56d",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-018",
+    "upstream_id": "18",
+    "description_sha256": "273f25bd1aa70b981b75040491b8e03c072794255b25a8662ccb01a49d539ae4",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-019",
+    "upstream_id": "19",
+    "description_sha256": "24796dfafed31f8ca5f468d6649bcda171b38bafccc123f27d97079f35ddc85e",
+    "split": "dev",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-020",
+    "upstream_id": "20",
+    "description_sha256": "f606fe727591aa7c90f74402df11a520ecb7b1b4bd4010fe1946717682ec9e21",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "给予"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-021",
+    "upstream_id": "21",
+    "description_sha256": "ff78cde457152906c3075b5676e7476bb3626b7fdeab5ef14bcdc6c67443ba02",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-022",
+    "upstream_id": "22",
+    "description_sha256": "eec84f9c542b5c85ebd33492f4f9f5df1329ba0d91a6fbf4fd25587b20f5c432",
+    "split": "dev",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-023",
+    "upstream_id": "23",
+    "description_sha256": "e0ea98014f2e8f7dc81ff4919e683cbe18cccf1f8c1ed3f06b0df111099f0cf2",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "予以"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-024",
+    "upstream_id": "24",
+    "description_sha256": "a8f636a20217267f68e322390079dedb9bc8db71b72df4f2ee0a4ea6dda6c661",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "术中",
+      "术后",
+      "诊断为"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-025",
+    "upstream_id": "25",
+    "description_sha256": "1f43f70ff517b0ac4e0a3b9edb54f33edda7ebd2797da5e2a5c84cef4a067e24",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "给予"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-026",
+    "upstream_id": "26",
+    "description_sha256": "6fea7359b13d5051b287927f3ea7fa07c50d9cb2aaba6b0c90821db61beee203",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "治疗后",
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-027",
+    "upstream_id": "27",
+    "description_sha256": "879e361ff87076ac4caa537d7e18eb34d94dacd1d068b3fbfd0030dbce190589",
+    "split": "dev",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-028",
+    "upstream_id": "28",
+    "description_sha256": "e3fc0a32d8c1786f1fbdff2c0bd5ca45cab2bc162bc8d169b67c492e407e5c11",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "术前"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-029",
+    "upstream_id": "29",
+    "description_sha256": "77f2582329dec8ab33da8f31d486f711c1f776d1ca4053a73c7f81b465f189c0",
+    "split": "dev",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-030",
+    "upstream_id": "30",
+    "description_sha256": "c3d50515cff5e6371a03cbebb675922c70c67e51400fc1306d1881c6c90813b3",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-031",
+    "upstream_id": "31",
+    "description_sha256": "2196e3583eed69a809b3d1f372b0951525f60aa758817e62b4a54bfb507ddd55",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "予以"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-032",
+    "upstream_id": "32",
+    "description_sha256": "3806e90d39218c27b98a85777c61917c00658bd54dd32c97e2e796fdf528e8d1",
+    "split": "holdout",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-033",
+    "upstream_id": "33",
+    "description_sha256": "3fd97993931c2f8dafa44636cfe63e8d31f7aaa3de24b1a59bb7abbc51414091",
+    "split": "dev",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-034",
+    "upstream_id": "34",
+    "description_sha256": "54a2b00818b0a32796908c9c3baf1d3ecbe730d6ac7d3c4e8bce404d8b8437ae",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "出院",
+      "术中",
+      "术后",
+      "治疗后",
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-035",
+    "upstream_id": "35",
+    "description_sha256": "5453d6ae8dc303369076b4387ef4827813cbe901d34e717123e2004ac78dc71d",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-036",
+    "upstream_id": "36",
+    "description_sha256": "442d0934e72b64b359d7976d23bcd6be14eb1dabd5c8402d0aaa31f6079c3643",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-037",
+    "upstream_id": "37",
+    "description_sha256": "257684f4eea5be5e43caa8fafcfd23028571e54e26582e9d5b48bf624305cb84",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "术前"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-038",
+    "upstream_id": "38",
+    "description_sha256": "6a5c8ac8fe4316212b64e337e3a03281f8fe522afa9fea4200640b736423c9c1",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "活检",
+      "病理",
+      "诊断为"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-039",
+    "upstream_id": "39",
+    "description_sha256": "ea74a895f9512d19a5295cb5eed27eae86da32a3cdfce713638d295079edec5a",
+    "split": "holdout",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-040",
+    "upstream_id": "40",
+    "description_sha256": "4d2d68d1b0b7737b7754f8f5ad18bae9a2310036bc7f8b61772d3d805ac4384f",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理",
+      "给予"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-041",
+    "upstream_id": "41",
+    "description_sha256": "5a28f29560a0ad43e9dce7235371051491c4ecf5b5c83b4b24b32a39d0a6e09c",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "术前",
+      "治疗后",
+      "给予"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-042",
+    "upstream_id": "42",
+    "description_sha256": "889e6fdddc127950cacc0b81c970b9a50c1f44a3fc63e1bf70d412db31dddc13",
+    "split": "holdout",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-043",
+    "upstream_id": "43",
+    "description_sha256": "6439511636a8440e91657db882b800687ee4b68a1a1c8db668896fc63c70914a",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "术后",
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-044",
+    "upstream_id": "44",
+    "description_sha256": "4d219caaa9137561e64b73610269be39d278a174a5667a1e72a722c573be3756",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理",
+      "给予"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-045",
+    "upstream_id": "45",
+    "description_sha256": "ccf3dc40aebc6a4f0b3f213b17f8b1f655e2d5703de2ca325302e76a331fc5b7",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-046",
+    "upstream_id": "46",
+    "description_sha256": "88526ff386588a474f3c53cac0400d879f6fddda142c8b2a069b66e714244dc9",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "治疗后",
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-047",
+    "upstream_id": "47",
+    "description_sha256": "96a2cfa311c8d06f6fc0445d8015827a93e4b0313ad104b3dd2235af258be1a2",
+    "split": "dev",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-048",
+    "upstream_id": "48",
+    "description_sha256": "2ef1fb032d28f93c2c6c3ab562ac0d92fbe08af35588d8d8a82ef6e1e03b1d52",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "给予"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-049",
+    "upstream_id": "49",
+    "description_sha256": "574ca3f05898738426aff79924a1dce06d5331e466e974ecc3eb6bfa6eeb13da",
+    "split": "dev",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-050",
+    "upstream_id": "50",
+    "description_sha256": "2dba2e2ca50851c14def36f22dd98978d5ca1876dc97aa78b57cd087198e72f9",
+    "split": "dev",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-051",
+    "upstream_id": "51",
+    "description_sha256": "5244b2ffbae182f186835d01d41a70ab2acde7480e107ba4ae0b8456e1fe228c",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "治疗后",
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-052",
+    "upstream_id": "52",
+    "description_sha256": "b4cae77fe6a6647a9869031fe04fd7727e7722f9003b9a5fa921ffe782ebab48",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "术后"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-053",
+    "upstream_id": "53",
+    "description_sha256": "26b1613960230a14278d89015ec05a44ecf2944b2deca722cf95422d0f7dd583",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "术中",
+      "术后",
+      "给予"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-054",
+    "upstream_id": "54",
+    "description_sha256": "638c1c59d078208aec8804b4d8d7d35d0e993db1f32c6362d6735b1012bc72e7",
+    "split": "dev",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-055",
+    "upstream_id": "55",
+    "description_sha256": "cd90b8e335ff8dee58718aa6bb56c395ba381063bbcac07fff116d8f9eda3cd2",
+    "split": "dev",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-056",
+    "upstream_id": "56",
+    "description_sha256": "8dde3eb5a405e3b20dc9333c961a9908d0ae225408c5294003138b6757afda2a",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-057",
+    "upstream_id": "57",
+    "description_sha256": "d065c1b136b9860f5b83ebfb07dd912c26e1f3e41cb54ded9cdc043d7c2cee53",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-058",
+    "upstream_id": "58",
+    "description_sha256": "4d7792457a54004193e182024bc70fe5777d2a7b4ddd87c6efaaec2809cb8a63",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "活检",
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-059",
+    "upstream_id": "59",
+    "description_sha256": "f995ecc33f9f8c083adfd55abb8be919f686703dedecbf0e7b6e0b7060ca9c79",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-060",
+    "upstream_id": "60",
+    "description_sha256": "94d25f58774b5aadd6f6442c2c4f926e71619d650dbe72756ff2f7bd5bb1f255",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理",
+      "给予"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-061",
+    "upstream_id": "61",
+    "description_sha256": "f9eb8ba7795fdea64bf21859bf42624ec11ed4276773588a4f64484647fe4883",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "出院",
+      "术后",
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-062",
+    "upstream_id": "62",
+    "description_sha256": "6b028d170bf9fa01b8d04cf1ba00f1bac6655f88ad52060200a9f9ebbd6330fc",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-063",
+    "upstream_id": "63",
+    "description_sha256": "480ea8339571c73459cefa978c95932793fa021e3a4c4afbaf007dbe14e881bf",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-064",
+    "upstream_id": "64",
+    "description_sha256": "b09d7e9d3000262bd668bea349749f67673c403cd97cbb37d0cd558a9aca9b91",
+    "split": "dev",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-065",
+    "upstream_id": "65",
+    "description_sha256": "cd1ea238aa4c28c673de3ec4ac055d05c523ab5d213535acfa1025ea5742db8a",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理",
+      "给予"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-066",
+    "upstream_id": "66",
+    "description_sha256": "27dbcb9051fb79a3b981c770e9a022b0a00a5c5eea4789696254d36ca014ad96",
+    "split": "dev",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-067",
+    "upstream_id": "67",
+    "description_sha256": "63d74786d0b65c4fc34a445c9a4c92588a2940d8dd23fd44d91460f00f094d9d",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "治疗后"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-068",
+    "upstream_id": "68",
+    "description_sha256": "6bbafabe676e8ab9c42d00f487a64a94c1f4fcf2b15cbc57918940debba338b7",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理",
+      "给予"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-069",
+    "upstream_id": "69",
+    "description_sha256": "b2d5ff8210d4e8c6c7bcbc1d52698135e7843e79fd10fccec8088cac114f0246",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-070",
+    "upstream_id": "70",
+    "description_sha256": "e0fa98467ca0eca539f1d35a9ca653143a47a0c797aedc7c275f29b96acaf8c3",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "出院",
+      "术后",
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-071",
+    "upstream_id": "71",
+    "description_sha256": "73c6c3c38610c4161fc7ed0c2afe2ffd08d102e166a37d8850bffa3ee65a1afd",
+    "split": "dev",
+    "needs_manual_timeline_review": false,
+    "risk_terms": [],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-072",
+    "upstream_id": "72",
+    "description_sha256": "241b017bbb86285411b016e8f7ad49f96c9d8eb2902403689aaae63a610c52a9",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "活检",
+      "病理"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  },
+  {
+    "case_id": "CMB-073",
+    "upstream_id": "73",
+    "description_sha256": "0e66b5f214a72582bf711c1c5186aff95400260d610c7cd2b300ff89ab7ac25d",
+    "split": "quarantine",
+    "needs_manual_timeline_review": true,
+    "risk_terms": [
+      "活检",
+      "病理",
+      "给予"
+    ],
+    "cutoff_assumption": "教学描述的可用资料边界，非真实入院时间；启发式筛选不保证无泄漏。",
+    "excluded_fields": [
+      "title",
+      "QA_pairs"
+    ],
+    "dataset": "CMB-Clin"
+  }
+]

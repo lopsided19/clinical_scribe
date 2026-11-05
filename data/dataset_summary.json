@@ -1,0 +1,23 @@
+{
+  "cmb": {
+    "raw": 74,
+    "eligible_heuristic_only": 22,
+    "quarantined": 52,
+    "dev": 16,
+    "holdout": 6
+  },
+  "mimic_demo": {
+    "patients_in_raw": 100,
+    "prepared_patients": 85,
+    "selected_labs": 2719,
+    "omitted": {
+      "outside_window_or_not_available_or_invalid_time": 73836,
+      "no_matching_admission": 28420,
+      "missing_value": 1011
+    },
+    "cutoff_rule": "admittime - 6h <= charttime <= storetime <= admittime + 6h; one eligible admission per subject",
+    "dev": 68,
+    "holdout": 17
+  },
+  "note": "公开病例仅用于开发；正式检索资料须经赛方允许。所有启发式筛选仍需人工审阅。"
+}
