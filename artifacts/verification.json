@@ -1,11 +1,11 @@
 {
-  "started_at": "2026-11-05T07:59:48.447273+00:00",
+  "started_at": "2026-11-05T13:58:39.547183+00:00",
   "python_version": "3.11.9",
   "kind": "engineering_verification_not_clinical_validation",
   "checks": {
     "unit_tests": {
       "passed": true,
-      "count": 159
+      "count": 167
     },
     "offline_review_script": {
       "passed": true,
@@ -64,7 +64,7 @@
   },
   "package": {
     "file": "LOCAL_PREVIEW_algorithm.zip",
-    "sha256": "c2ed6ee557ff62e7c8e545ee8b4484e9d1a997ca0de21a32fcf7b85adee6991f",
+    "sha256": "3b68eb2f258625ea1275f129d69be435885d164039c333245229d700c6952539",
     "files": [
       "main.py",
       "requires.txt",
@@ -113,5 +113,5 @@
     "completed": false,
     "reason": "赛方模型接口和最终限制尚未提供"
   },
-  "finished_at": "2026-11-05T07:59:52.206394+00:00"
+  "finished_at": "2026-11-05T13:58:44.416257+00:00"
 }

@@ -4,6 +4,8 @@
 
 ## 当前交付状态
 
+按规则 PDF 与视频的逐项对照见 `docs/REQUIREMENTS_TRACEABILITY.md`；现场运行和问答准备见 `docs/REPRODUCTION_GUIDE.md`。工程验收通过不等于医学评分或正式提交条件已经全部满足。
+
 - 已实现比赛输入输出协议、指定模型远程调用、完整日志、逐例异常隔离、调用预算与超时管理、原文事实台账、来源与数值规则校验。
 - 已下载并固定 CMB-Clin、MIMIC-IV Demo 2.2 的开发资料、许可证、来源与 SHA-256。详见 `docs/DATA_SOURCES.md`。
 - 已提供真实模型实验工具、模拟接口、自动测试、离线结果复核页面生成器和提交打包工具。
@@ -80,6 +82,7 @@ python tools/run_local_demo.py
 python tools/run_experiment.py --input data/prepared/cmb/dev.json --env .env --variant baseline
 python tools/run_experiment.py --input data/prepared/cmb/dev.json --env .env --variant grounded
 python tools/compare_runs.py --baseline BASELINE_RUN_DIR --candidate CANDIDATE_RUN_DIR --report artifacts/comparison.json
+python tools/prepare_clinical_review.py --baseline BASELINE_RUN_DIR --candidate CANDIDATE_RUN_DIR --out-dir artifacts/clinical_review_round1
 ```
 
 赛方允许足够预算后再测试 `--variant extract_generate` 或 `--variant repair`。数据的 `holdout.json` 应在方法冻结后用于最终开发评估；本地 MOCK 为工程测试已遍历所有输入，不等于真实模型已在留出集上调参。公开基准可能已被模型预训练看到，不能宣称无污染。

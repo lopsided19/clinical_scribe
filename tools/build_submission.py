@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT))
 from src.io_utils import atomic_json, digest, file_digest, read_json
 from src.runner import code_manifest
 from tools.evaluate import evaluate
+from tools.run_integrity import load_verified_run
 
 
 def build_algorithm(team: str, directory: Path, source: Path = ROOT) -> dict:
@@ -34,6 +35,7 @@ def build_results(team: str, directory: Path, run: Path, source: Path = ROOT) ->
     log = read_json(run / "run_log.json")
     if "MOCK" in str(log.get("model_name", "")).upper():
         raise ValueError("拒绝把 MOCK 工程测试输出打包成正式结果。")
+    inputs, outputs, log = load_verified_run(run)
     if log.get("status") != "completed" or log.get("exit_code") != 0:
         raise ValueError("只能打包成功完成运行的结果。")
     for filename, key in (("input.json", "input_sha256"), ("output.json", "output_sha256")):
@@ -41,11 +43,11 @@ def build_results(team: str, directory: Path, run: Path, source: Path = ROOT) ->
             raise ValueError(filename + " 与运行日志哈希不一致。")
     if code_manifest(source) != log.get("code_files"):
         raise ValueError("当前源码/提示词/配置与该次运行版本不同，不能拼接提交。")
-    inputs, outputs = read_json(run / "input.json"), read_json(run / "output.json")
     report = evaluate(inputs, outputs, log)
     if not report["count_and_order_match"] or report["schema_valid_cases"] != len(inputs):
         raise ValueError("结果未通过协议检查。")
     target = directory / f"{team}_results.zip"
+    directory.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED) as archive:
         archive.write(run / "output.json", "results.json")
         archive.write(run / "output.json", "output.json")

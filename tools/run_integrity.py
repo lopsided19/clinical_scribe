@@ -5,6 +5,7 @@ import math
 from pathlib import Path
 
 from src.io_utils import digest, file_digest, read_json
+from src.config import load_settings
 from src.pipeline import load_prompts
 from src.runner import code_manifest
 
@@ -23,8 +24,8 @@ def load_verified_run(directory: Path) -> tuple[list, list, dict]:
     settings = log.get("settings")
     if not isinstance(settings, dict) or digest(settings) != log.get("settings_sha256"):
         raise ValueError("日志配置哈希不一致")
-    if read_json(directory / "settings.json") != settings:
-        raise ValueError("实验必须保存完整的实际配置")
+    if load_settings(directory) != settings:
+        raise ValueError("冻结配置重建值与实际运行配置不同")
     if {key: digest(text) for key, text in load_prompts(directory).items()} != log.get("prompt_sha256"):
         raise ValueError("提示词正文与日志哈希不一致")
     cases = log.get("cases")
