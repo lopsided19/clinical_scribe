@@ -28,3 +28,5 @@ The publisher's license declaration is recorded, not an independent adjudication
 ## Artificial cases and competition format example
 
 `synthetic/adversarial.json` contains project-authored artificial engineering cases, not real patients or clinician-validated cases. `examples/input.demo.json` transcribes the publicly published competition format example; it is educational test material, not a hidden test answer.
+
+`synthetic/perturbations/` contains project-authored artificial seeds, deterministic mutations, and rule-generated engineering annotations. They are not derived patient records or clinician-validated ground truth. Unit mutations intentionally preserve numerical values to construct inconsistencies; they are not valid unit conversions.

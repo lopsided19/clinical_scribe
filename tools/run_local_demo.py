@@ -21,6 +21,8 @@ def main():
     inputs += read_json(ROOT / "data/prepared/cmb/holdout.json")
     inputs += read_json(ROOT / "data/prepared/mimic_demo/cases.json")
     inputs += read_json(ROOT / "data/synthetic/adversarial.json")
+    inputs += read_json(ROOT / "data/synthetic/perturbations/seed_cases.json")
+    inputs += read_json(ROOT / "data/synthetic/perturbations/cases.json")
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     base = ROOT / "artifacts" / ("local_mock_" + timestamp)
     base.mkdir(parents=True, exist_ok=False)

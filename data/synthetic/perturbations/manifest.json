@@ -1,0 +1,269 @@
+{
+  "kind": "artificial_engineering_mutations",
+  "cases": [
+    {
+      "parent_case_id": "CONTROL-TIMELINE",
+      "operation": "drop_measurement",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "4e87febb19f40084880b563eebf8034cd7c76099d899e833740722bc455d6525",
+      "case_id": "CONTROL-TIMELINE__drop_measurement",
+      "variant_sha256": "26faec31b5763c41babf68352d9c3ca06ffc16590e4c7319bb6e770337caf4b4",
+      "expected_stale_output_flags_any_of": [
+        "UNSUPPORTED_NUMBER",
+        "ENTITY_VALUE_MISMATCH",
+        "OBSERVATION_STATE_MISMATCH"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-TIMELINE",
+      "operation": "change_value",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "4e87febb19f40084880b563eebf8034cd7c76099d899e833740722bc455d6525",
+      "case_id": "CONTROL-TIMELINE__change_value",
+      "variant_sha256": "d23c3e71acfc4d96b35876498055bc533b70f16aea2efbe731e6796ba04088f3",
+      "expected_stale_output_flags_any_of": [
+        "UNSUPPORTED_NUMBER",
+        "ENTITY_VALUE_MISMATCH"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-TIMELINE",
+      "operation": "change_unit",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "4e87febb19f40084880b563eebf8034cd7c76099d899e833740722bc455d6525",
+      "case_id": "CONTROL-TIMELINE__change_unit",
+      "variant_sha256": "58eed7ad74a979f5bfde2713c55c4f26458c453b0a2b8e1acbb8c310b4f9c64f",
+      "expected_stale_output_flags_any_of": [
+        "ENTITY_UNIT_MISMATCH"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-TIMELINE",
+      "operation": "flip_negation",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "4e87febb19f40084880b563eebf8034cd7c76099d899e833740722bc455d6525",
+      "case_id": "CONTROL-TIMELINE__flip_negation",
+      "variant_sha256": "4eb7c8f3dee59329b42c8e2c4ba505f74b3e456fe2b4834b71550dd36ad156dd",
+      "expected_stale_output_flags_any_of": [
+        "OBSERVATION_STATE_MISMATCH"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-TIMELINE",
+      "operation": "inject_conflict",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "4e87febb19f40084880b563eebf8034cd7c76099d899e833740722bc455d6525",
+      "case_id": "CONTROL-TIMELINE__inject_conflict",
+      "variant_sha256": "37d7e588754e8475c3c32067e63a3117ba70635b8e10569f0a42f8bf48a536f0",
+      "expected_stale_output_flags_any_of": [
+        "POTENTIAL_SOURCE_VALUE_CONFLICT"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-TIMELINE",
+      "operation": "shift_time",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "4e87febb19f40084880b563eebf8034cd7c76099d899e833740722bc455d6525",
+      "case_id": "CONTROL-TIMELINE__shift_time",
+      "variant_sha256": "525f8e00178c399e4396f397bd0928ab9b2458cc2a138bcf5c8fc5f8b9b2605c",
+      "expected_stale_output_flags_any_of": [
+        "MEASUREMENT_TIME_MISMATCH",
+        "MEASUREMENT_DATE_MISMATCH"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-TIMELINE",
+      "operation": "future_availability",
+      "seed": 2026,
+      "status": "not_applicable",
+      "input_sha256": "4e87febb19f40084880b563eebf8034cd7c76099d899e833740722bc455d6525",
+      "case_id": null,
+      "variant_sha256": null,
+      "expected_stale_output_flags_any_of": [
+        "AFTER_CUTOFF_FACT"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-CLOCK",
+      "operation": "drop_measurement",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "6f87734ea994c85383e7d688544b6282b0f3e1f916111309d35bc4a8e5874c3e",
+      "case_id": "CONTROL-CLOCK__drop_measurement",
+      "variant_sha256": "45621d19adc5ee94835cd26a0cef1732097a56fac3858bb18019ceb337c2062b",
+      "expected_stale_output_flags_any_of": [
+        "UNSUPPORTED_NUMBER",
+        "ENTITY_VALUE_MISMATCH",
+        "OBSERVATION_STATE_MISMATCH"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-CLOCK",
+      "operation": "change_value",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "6f87734ea994c85383e7d688544b6282b0f3e1f916111309d35bc4a8e5874c3e",
+      "case_id": "CONTROL-CLOCK__change_value",
+      "variant_sha256": "6274ad4d7ee2ce9f6629613a79c9a877a507192414bdcd9c8cfb8a81a0d34f09",
+      "expected_stale_output_flags_any_of": [
+        "UNSUPPORTED_NUMBER",
+        "ENTITY_VALUE_MISMATCH"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-CLOCK",
+      "operation": "change_unit",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "6f87734ea994c85383e7d688544b6282b0f3e1f916111309d35bc4a8e5874c3e",
+      "case_id": "CONTROL-CLOCK__change_unit",
+      "variant_sha256": "a2eabc3b49ffd27e08cb5457e37433ae91c23f07035b07e62182669586d11982",
+      "expected_stale_output_flags_any_of": [
+        "ENTITY_UNIT_MISMATCH"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-CLOCK",
+      "operation": "flip_negation",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "6f87734ea994c85383e7d688544b6282b0f3e1f916111309d35bc4a8e5874c3e",
+      "case_id": "CONTROL-CLOCK__flip_negation",
+      "variant_sha256": "8d296a32fa5e8f817674d8b9841b169d2f5cba910bdff55b5f349155f446aa13",
+      "expected_stale_output_flags_any_of": [
+        "OBSERVATION_STATE_MISMATCH"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-CLOCK",
+      "operation": "inject_conflict",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "6f87734ea994c85383e7d688544b6282b0f3e1f916111309d35bc4a8e5874c3e",
+      "case_id": "CONTROL-CLOCK__inject_conflict",
+      "variant_sha256": "5c2edbdaa2c77ee04c7120b03fdbd9cf8cb72db486a37b6c9a4cb026e591d72c",
+      "expected_stale_output_flags_any_of": [
+        "POTENTIAL_SOURCE_VALUE_CONFLICT"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-CLOCK",
+      "operation": "shift_time",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "6f87734ea994c85383e7d688544b6282b0f3e1f916111309d35bc4a8e5874c3e",
+      "case_id": "CONTROL-CLOCK__shift_time",
+      "variant_sha256": "a6fdf484018a0d65d4765cf1746cc628166ac1da49b67008e3649c9cd4fc2340",
+      "expected_stale_output_flags_any_of": [
+        "MEASUREMENT_TIME_MISMATCH",
+        "MEASUREMENT_DATE_MISMATCH"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-CLOCK",
+      "operation": "future_availability",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "6f87734ea994c85383e7d688544b6282b0f3e1f916111309d35bc4a8e5874c3e",
+      "case_id": "CONTROL-CLOCK__future_availability",
+      "variant_sha256": "4c7355f8a23277ca4bad57ac29a067f29f97537016e7653c7e2d02a300bdbc2c",
+      "expected_stale_output_flags_any_of": [
+        "AFTER_CUTOFF_FACT"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-STATE",
+      "operation": "drop_measurement",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "6c88b4c6d8c83a13c9be2f08a6923d25827d047bbfe01841504feeb9c5a03802",
+      "case_id": "CONTROL-STATE__drop_measurement",
+      "variant_sha256": "db0c4275bc39a096b0e4a47cba67b70aec9c29cdf08ec051f1cb0361cb68a5b0",
+      "expected_stale_output_flags_any_of": [
+        "UNSUPPORTED_NUMBER",
+        "ENTITY_VALUE_MISMATCH",
+        "OBSERVATION_STATE_MISMATCH"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-STATE",
+      "operation": "change_value",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "6c88b4c6d8c83a13c9be2f08a6923d25827d047bbfe01841504feeb9c5a03802",
+      "case_id": "CONTROL-STATE__change_value",
+      "variant_sha256": "7457a27a43b55c43bbee45085362a369c990548a589ca67c171b1c1a102ce9bf",
+      "expected_stale_output_flags_any_of": [
+        "UNSUPPORTED_NUMBER",
+        "ENTITY_VALUE_MISMATCH"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-STATE",
+      "operation": "change_unit",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "6c88b4c6d8c83a13c9be2f08a6923d25827d047bbfe01841504feeb9c5a03802",
+      "case_id": "CONTROL-STATE__change_unit",
+      "variant_sha256": "5a7d9152651869f07974c174cef9b3f5f7b36ef86bd7dc5bb18d6a51f9d2d899",
+      "expected_stale_output_flags_any_of": [
+        "ENTITY_UNIT_MISMATCH"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-STATE",
+      "operation": "flip_negation",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "6c88b4c6d8c83a13c9be2f08a6923d25827d047bbfe01841504feeb9c5a03802",
+      "case_id": "CONTROL-STATE__flip_negation",
+      "variant_sha256": "2a65c8cae8c63e6e27e0d806832fcf8443ed62c5a78bcac7fbd30e6b5d2883ca",
+      "expected_stale_output_flags_any_of": [
+        "OBSERVATION_STATE_MISMATCH"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-STATE",
+      "operation": "inject_conflict",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "6c88b4c6d8c83a13c9be2f08a6923d25827d047bbfe01841504feeb9c5a03802",
+      "case_id": "CONTROL-STATE__inject_conflict",
+      "variant_sha256": "662a7c23d97b5424119dac14f10a84cf450d9bd12445996fb6baabce8343df7e",
+      "expected_stale_output_flags_any_of": [
+        "POTENTIAL_SOURCE_VALUE_CONFLICT"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-STATE",
+      "operation": "shift_time",
+      "seed": 2026,
+      "status": "generated",
+      "input_sha256": "6c88b4c6d8c83a13c9be2f08a6923d25827d047bbfe01841504feeb9c5a03802",
+      "case_id": "CONTROL-STATE__shift_time",
+      "variant_sha256": "afcf058edf057d2c93b8edd113efae2f39f691d83be3d6de75ab7aebbf20102d",
+      "expected_stale_output_flags_any_of": [
+        "MEASUREMENT_TIME_MISMATCH",
+        "MEASUREMENT_DATE_MISMATCH"
+      ]
+    },
+    {
+      "parent_case_id": "CONTROL-STATE",
+      "operation": "future_availability",
+      "seed": 2026,
+      "status": "not_applicable",
+      "input_sha256": "6c88b4c6d8c83a13c9be2f08a6923d25827d047bbfe01841504feeb9c5a03802",
+      "case_id": null,
+      "variant_sha256": null,
+      "expected_stale_output_flags_any_of": [
+        "AFTER_CUTOFF_FACT"
+      ]
+    }
+  ]
+}

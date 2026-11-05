@@ -33,6 +33,11 @@ def main():
     if tests.returncode:
         print(text)
         raise SystemExit(tests.returncode)
+    regression = read_json(ROOT / "data/synthetic/perturbations/regression.json")
+    assert regression["passed"] == regression["generated_cases"]
+    result["checks"]["controlled_stale_echo_regression"] = {
+        "passed": regression["passed"], "cases": regression["generated_cases"],
+        "kind": regression["kind"]}
     package = build_algorithm("LOCAL_PREVIEW", ROOT / "dist")
     atomic_json(ROOT / "dist/package_manifest.json", {"packages": [package]})
     package_path = ROOT / "dist" / package["file"]

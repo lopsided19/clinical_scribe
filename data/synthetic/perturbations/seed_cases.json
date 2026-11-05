@@ -1,0 +1,60 @@
+[
+  {
+    "case_id": "CONTROL-TIMELINE",
+    "record_cutoff": "T0",
+    "sources": [
+      {
+        "source_id": "S01",
+        "content": "既往肌酐 90 μmol/L。"
+      },
+      {
+        "source_id": "S02",
+        "content": "入院时肌酐 185 μmol/L，实验室标高。"
+      },
+      {
+        "source_id": "S03",
+        "content": "否认胸痛、黑便。"
+      },
+      {
+        "source_id": "S04",
+        "content": "血压未提供；尿量不详。"
+      }
+    ]
+  },
+  {
+    "case_id": "CONTROL-CLOCK",
+    "record_cutoff": "2026-01-02 10:00:00",
+    "sources": [
+      {
+        "source_id": "S01",
+        "content": "肌酐 185 μmol/L；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。"
+      },
+      {
+        "source_id": "S02",
+        "content": "血红蛋白 82 g/L；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。"
+      },
+      {
+        "source_id": "S03",
+        "content": "乏力 2 周，否认胸痛。"
+      }
+    ]
+  },
+  {
+    "case_id": "CONTROL-STATE",
+    "record_cutoff": "T0",
+    "sources": [
+      {
+        "source_id": "S01",
+        "content": "否认药物过敏。"
+      },
+      {
+        "source_id": "S02",
+        "content": "血压未提供；尿量不详。"
+      },
+      {
+        "source_id": "S03",
+        "content": "当前肌酐 185 μmol/L。"
+      }
+    ]
+  }
+]

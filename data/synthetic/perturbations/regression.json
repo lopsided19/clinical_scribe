@@ -1,0 +1,190 @@
+{
+  "kind": "stale_echo_regression_not_model_evaluation",
+  "generated_cases": 19,
+  "checks": [
+    {
+      "case_id": "CONTROL-TIMELINE__drop_measurement",
+      "operation": "drop_measurement",
+      "expected_flag_detected": true,
+      "flags": [
+        "ENTITY_VALUE_MISMATCH",
+        "EVIDENCE_NUMBER_MISMATCH",
+        "UNSUPPORTED_NUMBER"
+      ]
+    },
+    {
+      "case_id": "CONTROL-TIMELINE__change_value",
+      "operation": "change_value",
+      "expected_flag_detected": true,
+      "flags": [
+        "CANDIDATE_FACT_NOT_MENTIONED",
+        "ENTITY_VALUE_MISMATCH",
+        "EVIDENCE_ENTITY_MISMATCH",
+        "EVIDENCE_NUMBER_MISMATCH",
+        "UNSUPPORTED_NUMBER"
+      ]
+    },
+    {
+      "case_id": "CONTROL-TIMELINE__change_unit",
+      "operation": "change_unit",
+      "expected_flag_detected": true,
+      "flags": [
+        "CANDIDATE_FACT_NOT_MENTIONED",
+        "ENTITY_UNIT_MISMATCH",
+        "EVIDENCE_UNIT_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "CONTROL-TIMELINE__flip_negation",
+      "operation": "flip_negation",
+      "expected_flag_detected": true,
+      "flags": [
+        "EVIDENCE_OBSERVATION_STATE_MISMATCH",
+        "OBSERVATION_STATE_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "CONTROL-TIMELINE__inject_conflict",
+      "operation": "inject_conflict",
+      "expected_flag_detected": true,
+      "flags": [
+        "CANDIDATE_FACT_NOT_MENTIONED",
+        "POTENTIAL_SOURCE_VALUE_CONFLICT"
+      ]
+    },
+    {
+      "case_id": "CONTROL-TIMELINE__shift_time",
+      "operation": "shift_time",
+      "expected_flag_detected": true,
+      "flags": [
+        "EVIDENCE_MEASUREMENT_TIME_MISMATCH",
+        "MEASUREMENT_TIME_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "CONTROL-CLOCK__drop_measurement",
+      "operation": "drop_measurement",
+      "expected_flag_detected": true,
+      "flags": [
+        "EVIDENCE_NUMBER_MISMATCH",
+        "UNSUPPORTED_NUMBER"
+      ]
+    },
+    {
+      "case_id": "CONTROL-CLOCK__change_value",
+      "operation": "change_value",
+      "expected_flag_detected": true,
+      "flags": [
+        "CANDIDATE_FACT_NOT_MENTIONED",
+        "ENTITY_VALUE_MISMATCH",
+        "EVIDENCE_ENTITY_MISMATCH",
+        "EVIDENCE_NUMBER_MISMATCH",
+        "UNSUPPORTED_NUMBER"
+      ]
+    },
+    {
+      "case_id": "CONTROL-CLOCK__change_unit",
+      "operation": "change_unit",
+      "expected_flag_detected": true,
+      "flags": [
+        "CANDIDATE_FACT_NOT_MENTIONED",
+        "ENTITY_UNIT_MISMATCH",
+        "EVIDENCE_UNIT_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "CONTROL-CLOCK__flip_negation",
+      "operation": "flip_negation",
+      "expected_flag_detected": true,
+      "flags": [
+        "EVIDENCE_OBSERVATION_STATE_MISMATCH",
+        "OBSERVATION_STATE_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "CONTROL-CLOCK__inject_conflict",
+      "operation": "inject_conflict",
+      "expected_flag_detected": true,
+      "flags": [
+        "CANDIDATE_FACT_NOT_MENTIONED",
+        "POTENTIAL_SOURCE_VALUE_CONFLICT"
+      ]
+    },
+    {
+      "case_id": "CONTROL-CLOCK__shift_time",
+      "operation": "shift_time",
+      "expected_flag_detected": true,
+      "flags": [
+        "EVIDENCE_MEASUREMENT_DATE_MISMATCH",
+        "MEASUREMENT_DATE_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "CONTROL-CLOCK__future_availability",
+      "operation": "future_availability",
+      "expected_flag_detected": true,
+      "flags": [
+        "AFTER_CUTOFF_FACT",
+        "EVIDENCE_AFTER_CUTOFF_FACT",
+        "EVIDENCE_NUMBER_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "CONTROL-STATE__drop_measurement",
+      "operation": "drop_measurement",
+      "expected_flag_detected": true,
+      "flags": [
+        "EVIDENCE_NUMBER_MISMATCH",
+        "UNSUPPORTED_NUMBER"
+      ]
+    },
+    {
+      "case_id": "CONTROL-STATE__change_value",
+      "operation": "change_value",
+      "expected_flag_detected": true,
+      "flags": [
+        "ENTITY_VALUE_MISMATCH",
+        "EVIDENCE_ENTITY_MISMATCH",
+        "EVIDENCE_NUMBER_MISMATCH",
+        "UNSUPPORTED_NUMBER"
+      ]
+    },
+    {
+      "case_id": "CONTROL-STATE__change_unit",
+      "operation": "change_unit",
+      "expected_flag_detected": true,
+      "flags": [
+        "ENTITY_UNIT_MISMATCH",
+        "EVIDENCE_UNIT_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "CONTROL-STATE__flip_negation",
+      "operation": "flip_negation",
+      "expected_flag_detected": true,
+      "flags": [
+        "EVIDENCE_OBSERVATION_STATE_MISMATCH",
+        "OBSERVATION_STATE_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "CONTROL-STATE__inject_conflict",
+      "operation": "inject_conflict",
+      "expected_flag_detected": true,
+      "flags": [
+        "POTENTIAL_SOURCE_VALUE_CONFLICT"
+      ]
+    },
+    {
+      "case_id": "CONTROL-STATE__shift_time",
+      "operation": "shift_time",
+      "expected_flag_detected": true,
+      "flags": [
+        "EVIDENCE_MEASUREMENT_TIME_MISMATCH",
+        "MEASUREMENT_TIME_MISMATCH"
+      ]
+    }
+  ],
+  "passed": 19,
+  "note": "检查未更新的旧回显能否触发预期规则，不是模型效果、医学准确率或一般检测准确率。"
+}

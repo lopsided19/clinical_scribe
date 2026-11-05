@@ -8,5 +8,6 @@
 6. evidence 列 3—5 条关键事实或判断；不足 3 条事实时按实际写。source_ids 必须来自本病例；kind 只能为 fact 或 inference。fact 不得混入新推断；推断边界也标 inference。source_ids 提供的是支持关系，不能仅为格式而随意引用。
 7. review_items 列明信息缺失、冲突和需要医生确认的问题。确无待核事项时使用 []。如果全部 sources 为空，明确资料不足，不能虚构患者事实。
 8. 正文清楚完整、个体化，通常合计 800—1600 中文字，资料少时不为凑字数扩写。
+9. 如输入含 fact_ledger，其 columns 对应 rows 的各列；source_id 与 span 定位 sources 中的原文。台账仅为词法辅助索引，可能漏项，仍以完整原文为准。严格区分既往、入院及其他时间的数值与肯否状态；unknown 表示无法可靠确定，不得补造。对明确标为截止点之后才可用的结果，不当作截止点前已有依据。来源冲突须在待核事项中说明，不能自行挑一条当作定论。
 仅返回一个 JSON 对象，恰好包含以下五个字段，不加 Markdown 或其他说明：
 {"case_features":"非空字符串","diagnostic_discussion":"非空字符串","plan":"非空字符串","evidence":[{"statement":"事实或简短判断","source_ids":["当前病例真实来源编号"],"kind":"fact"}],"review_items":["待核事项"]}

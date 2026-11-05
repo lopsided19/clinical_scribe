@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from .errors import CaseError
+from .io_utils import digest
 from .grounding import audit_record, build_ledger
 from .protocol import parse_model_object, validate_record
 
@@ -39,7 +40,10 @@ def validated_extraction(value: dict, case: dict) -> tuple[list[dict], int]:
 def generate(case: dict, client, settings: dict, prompts: dict, case_log: dict) -> dict:
     context = {"case": {key: case[key] for key in ("case_id", "record_cutoff", "sources")}}
     if settings["pipeline"] != "baseline":
-        context["verbatim_ledger"] = build_ledger(case)
+        context["fact_ledger"] = build_ledger(case)
+        case_log["ledger_summary"] = {"schema_version": "2.0", "fact_rows": len(context["fact_ledger"]["rows"]),
+                                      "characters": len(_json(context["fact_ledger"])),
+                                      "sha256": digest(context["fact_ledger"])}
     if settings["pipeline"] == "extract_generate":
         extraction_text = client.call([
             {"role": "system", "content": prompts["extract"]},

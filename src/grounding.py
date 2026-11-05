@@ -4,34 +4,14 @@ from __future__ import annotations
 import re
 import unicodedata
 
+from .clinical_text import normalize, measurement_spans
+from .facts import compact_ledger, temporal_state_flags
+from .coverage import coverage_report, conflict_review_flags
+
 NUMBER = re.compile(r"(?<![A-Za-z\d])[-+]?\d+(?:\.\d+)?(?:\s*[×x*]\s*10\s*\^?\s*\d+)?")
 CLAUSE = re.compile(r"[^。；;\n]+[。；;]?")
-ENTITIES = {
-    "血红蛋白": ("血红蛋白", "Hb", "HGB", "Hemoglobin"),
-    "肌酐": ("肌酐", "Cr", "SCr", "Creatinine"),
-    "血糖": ("血糖", "GLU", "Glucose"),
-    "血钾": ("血钾", "Potassium"),
-    "血钠": ("血钠", "Sodium"),
-    "血压": ("血压", "BP"),
-    "体温": ("体温", "Temperature"),
-    "心率": ("心率", "脉搏", "Heart Rate"),
-    "血小板": ("血小板", "Platelet Count"),
-    "白细胞": ("白细胞", "WBC", "White Blood Cells"),
-}
 MISSING = re.compile(r"未提供|不详|未知|缺失|未记录|未测|未查|未获得|待补充")
 MISSING_ITEMS = ("血压", "尿量", "用药史", "药物史", "过敏史", "既往史", "肾功能基线")
-MEASUREMENT = re.compile(
-    r"\s*(?:\([^()。；;\n]{1,50}\))?\s*[:=]?\s*(?:为|约)?\s*"
-    r"(?P<value>[<>≤≥]?\s*[-+]?\d+(?:\.\d+)?"
-    r"(?:\s*[×x*]\s*10\s*\^?\s*[-+]?\d+)?(?:\s*/\s*\d+(?:\.\d+)?)?)"
-    r"\s*(?P<unit>(?:[munpμµ]?g|[munμµ]?mol)/(?:dL|mL|L)"
-    r"|mmHg|kPa|°C|%|次/(?:分钟|分|min)|bpm|10\^?[369]/L|/L)?",
-    re.I,
-)
-
-
-def normalize(text: str) -> str:
-    return re.sub(r"\s+", "", unicodedata.normalize("NFKC", text)).replace("μ", "u").replace("µ", "u")
 
 
 def numbers(text: str) -> set[str]:
@@ -45,39 +25,13 @@ def clauses(text: str) -> list[str]:
 
 
 def build_ledger(case: dict) -> dict:
-    facts = []
-    for source in case["sources"]:
-        # Preserve every source verbatim; do not rely on model extraction alone.
-        facts.append({"source_id": source["source_id"], "verbatim": source["content"],
-                      "numbers": sorted(numbers(source["content"])),
-                      "contains_missing_information": bool(MISSING.search(source["content"])),
-                      "contains_negative_or_uncertain_information": bool(re.search(r"未见|否认|无|不能排除|可能|待查", source["content"]))})
-    return {"record_cutoff": case["record_cutoff"], "facts": facts,
-            "instruction": "verbatim 为唯一原始事实；数字列表仅作校对，不能跨指标、跨来源、跨时间拼接。"}
-
-
-def _unit_key(unit: str | None) -> str | None:
-    if unit is None:
-        return None
-    key = normalize(unit).lower()
-    return {"bpm": "次/min", "次/分钟": "次/min", "次/分": "次/min"}.get(key, key)
+    return compact_ledger(case)
 
 
 def _entity_measurements(text: str) -> dict[str, set[tuple[str, str | None]]]:
-    text = unicodedata.normalize("NFKC", text)
     result = {}
-    for entity, aliases in ENTITIES.items():
-        found = set()
-        for alias in aliases:
-            pattern = (r"(?<![A-Za-z])" + re.escape(alias) + r"(?![A-Za-z])") if alias.isascii() else re.escape(alias)
-            for match in re.finditer(pattern, text, re.I):
-                tail = text[match.end():match.end()+100]
-                # Only bind an adjacent value, never a number belonging to another analyte.
-                value = MEASUREMENT.match(tail)
-                if value:
-                    found.add((normalize(value.group("value")), _unit_key(value.group("unit"))))
-        if found:
-            result[entity] = found
+    for item in measurement_spans(text):
+        result.setdefault(item["entity"], set()).add((item["value"], item["unit"]))
     return result
 
 
@@ -153,4 +107,16 @@ def audit_record(record: dict, case: dict) -> list[dict]:
         add("MISSING_REVIEW_ITEMS", "review_items", "原文有明确缺失信息，但待核事项为空。")
     if len(record["evidence"]) < 3 and len(case["sources"]) >= 3:
         add("SPARSE_EVIDENCE", "evidence", "来源较多而依据不足 3 条，请核对是否遗漏关键事实。")
+    for item in temporal_state_flags(record["case_features"], case["sources"], case["record_cutoff"]):
+        add(item["code"], "case_features", item["entity"] + " 的来源时间或状态需要复核。", item["severity"])
+    for index, item in enumerate(record["evidence"]):
+        if item["kind"] == "fact":
+            cited_sources = [s for s in case["sources"] if s["source_id"] in item["source_ids"]]
+            for flag in temporal_state_flags(item["statement"], cited_sources, case["record_cutoff"]):
+                add("EVIDENCE_" + flag["code"], f"evidence[{index}]", flag["entity"] + " 与所引来源的时间或状态需要复核。", flag["severity"])
+    missing = coverage_report(case, record)["missing"]
+    if missing:
+        add("CANDIDATE_FACT_NOT_MENTIONED", "case_features", f"{len(missing)} 项原文明确标记的异常/关键指标未被词法匹配覆盖，请人工复核。")
+    for flag in conflict_review_flags(case, record):
+        add(flag["code"], "review_items", flag["entity"] + " 的来源存在潜在冲突，待核事项未提及该问题。")
     return issues

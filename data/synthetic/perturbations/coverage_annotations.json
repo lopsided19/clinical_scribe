@@ -1,0 +1,1803 @@
+{
+  "schema_version": "1.0",
+  "review_status": "synthetic_engineering_only_not_clinician_validated",
+  "cases": [
+    {
+      "case_id": "CONTROL-TIMELINE",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "既往肌酐 90 μmol/L。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "90",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "historical"
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "入院时肌酐 185 μmol/L，实验室标高。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "185",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "admission"
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "否认胸痛、黑便。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "胸痛",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F002",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "否认胸痛、黑便。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "黑便",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S04:F001",
+          "source_ids": [
+            "S04"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "血压",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S04:F002",
+          "source_ids": [
+            "S04"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "尿量",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-CLOCK",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "肌酐 185 μmol/L；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "185",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血红蛋白 82 g/L；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "血红蛋白",
+          "value": "82",
+          "unit": "g/l",
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "乏力 2 周，否认胸痛。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "乏力",
+          "value": null,
+          "unit": null,
+          "polarity": "positive",
+          "duration": "2周"
+        },
+        {
+          "key_fact_id": "S03:F002",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "乏力 2 周，否认胸痛。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "胸痛",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-STATE",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "否认药物过敏。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "药物过敏",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "血压",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F002",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "尿量",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "当前肌酐 185 μmol/L。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "185",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "current"
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-TIMELINE__drop_measurement",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "既往肌酐 90 μmol/L。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "90",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "historical"
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "入院时肌酐 未提供，实验室标高。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "肌酐",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null,
+          "time_scope": "admission"
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "否认胸痛、黑便。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "胸痛",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F002",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "否认胸痛、黑便。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "黑便",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S04:F001",
+          "source_ids": [
+            "S04"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "血压",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S04:F002",
+          "source_ids": [
+            "S04"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "尿量",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-TIMELINE__change_value",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "既往肌酐 90 μmol/L。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "90",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "historical"
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "入院时肌酐 186 μmol/L，实验室标高。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "186",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "admission"
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "否认胸痛、黑便。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "胸痛",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F002",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "否认胸痛、黑便。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "黑便",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S04:F001",
+          "source_ids": [
+            "S04"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "血压",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S04:F002",
+          "source_ids": [
+            "S04"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "尿量",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-TIMELINE__change_unit",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "既往肌酐 90 μmol/L。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "90",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "historical"
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "入院时肌酐 185 mg/dL，实验室标高。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "185",
+          "unit": "mg/dl",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "admission"
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "否认胸痛、黑便。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "胸痛",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F002",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "否认胸痛、黑便。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "黑便",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S04:F001",
+          "source_ids": [
+            "S04"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "血压",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S04:F002",
+          "source_ids": [
+            "S04"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "尿量",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-TIMELINE__flip_negation",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "既往肌酐 90 μmol/L。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "90",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "historical"
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "入院时肌酐 185 μmol/L，实验室标高。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "185",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "admission"
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "存在胸痛、黑便。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "胸痛",
+          "value": null,
+          "unit": null,
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F002",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "存在胸痛、黑便。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "黑便",
+          "value": null,
+          "unit": null,
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S04:F001",
+          "source_ids": [
+            "S04"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "血压",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S04:F002",
+          "source_ids": [
+            "S04"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "尿量",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-TIMELINE__inject_conflict",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "既往肌酐 90 μmol/L。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "90",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "historical"
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "入院时肌酐 185 μmol/L，实验室标高。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "185",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "admission"
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "否认胸痛、黑便。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "胸痛",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F002",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "否认胸痛、黑便。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "黑便",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S04:F001",
+          "source_ids": [
+            "S04"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "血压",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S04:F002",
+          "source_ids": [
+            "S04"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "尿量",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S_CONFLICT:F001",
+          "source_ids": [
+            "S_CONFLICT"
+          ],
+          "quote": "入院时肌酐 186 μmol/L，实验室标高。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "186",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "admission"
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-TIMELINE__shift_time",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "既往肌酐 90 μmol/L。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "90",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "historical"
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "既往肌酐 185 μmol/L，实验室标高。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "185",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "historical"
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "否认胸痛、黑便。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "胸痛",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F002",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "否认胸痛、黑便。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "黑便",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S04:F001",
+          "source_ids": [
+            "S04"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "血压",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S04:F002",
+          "source_ids": [
+            "S04"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "尿量",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-CLOCK__drop_measurement",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "肌酐 未提供；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "肌酐",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血红蛋白 82 g/L；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "血红蛋白",
+          "value": "82",
+          "unit": "g/l",
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "乏力 2 周，否认胸痛。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "乏力",
+          "value": null,
+          "unit": null,
+          "polarity": "positive",
+          "duration": "2周"
+        },
+        {
+          "key_fact_id": "S03:F002",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "乏力 2 周，否认胸痛。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "胸痛",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-CLOCK__change_value",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "肌酐 185 μmol/L；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "185",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血红蛋白 83 g/L；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "血红蛋白",
+          "value": "83",
+          "unit": "g/l",
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "乏力 2 周，否认胸痛。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "乏力",
+          "value": null,
+          "unit": null,
+          "polarity": "positive",
+          "duration": "2周"
+        },
+        {
+          "key_fact_id": "S03:F002",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "乏力 2 周，否认胸痛。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "胸痛",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-CLOCK__change_unit",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "肌酐 185 μmol/L；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "185",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血红蛋白 82 g/dL；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "血红蛋白",
+          "value": "82",
+          "unit": "g/dl",
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "乏力 2 周，否认胸痛。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "乏力",
+          "value": null,
+          "unit": null,
+          "polarity": "positive",
+          "duration": "2周"
+        },
+        {
+          "key_fact_id": "S03:F002",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "乏力 2 周，否认胸痛。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "胸痛",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-CLOCK__flip_negation",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "肌酐 185 μmol/L；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "185",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血红蛋白 82 g/L；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "血红蛋白",
+          "value": "82",
+          "unit": "g/l",
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "乏力 2 周，存在胸痛。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "乏力",
+          "value": null,
+          "unit": null,
+          "polarity": "positive",
+          "duration": "2周"
+        },
+        {
+          "key_fact_id": "S03:F002",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "乏力 2 周，存在胸痛。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "胸痛",
+          "value": null,
+          "unit": null,
+          "polarity": "positive",
+          "duration": null
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-CLOCK__inject_conflict",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "肌酐 185 μmol/L；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "185",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血红蛋白 82 g/L；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "血红蛋白",
+          "value": "82",
+          "unit": "g/l",
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "乏力 2 周，否认胸痛。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "乏力",
+          "value": null,
+          "unit": null,
+          "polarity": "positive",
+          "duration": "2周"
+        },
+        {
+          "key_fact_id": "S03:F002",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "乏力 2 周，否认胸痛。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "胸痛",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S_CONFLICT:F001",
+          "source_ids": [
+            "S_CONFLICT"
+          ],
+          "quote": "肌酐 186 μmol/L；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "186",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-CLOCK__shift_time",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "肌酐 185 μmol/L；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "185",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血红蛋白 82 g/L；采样/记录时间：2026-01-01 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "血红蛋白",
+          "value": "82",
+          "unit": "g/l",
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "乏力 2 周，否认胸痛。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "乏力",
+          "value": null,
+          "unit": null,
+          "polarity": "positive",
+          "duration": "2周"
+        },
+        {
+          "key_fact_id": "S03:F002",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "乏力 2 周，否认胸痛。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "胸痛",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-CLOCK__future_availability",
+      "facts": [
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血红蛋白 82 g/L；采样/记录时间：2026-01-02 08:00:00；结果可用时间：2026-01-02 09:00:00；原实验室标记：abnormal。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "血红蛋白",
+          "value": "82",
+          "unit": "g/l",
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "乏力 2 周，否认胸痛。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "乏力",
+          "value": null,
+          "unit": null,
+          "polarity": "positive",
+          "duration": "2周"
+        },
+        {
+          "key_fact_id": "S03:F002",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "乏力 2 周，否认胸痛。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "胸痛",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-STATE__drop_measurement",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "否认药物过敏。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "药物过敏",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "血压",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F002",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "尿量",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "当前肌酐 未提供。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "肌酐",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null,
+          "time_scope": "current"
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-STATE__change_value",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "否认药物过敏。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "药物过敏",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "血压",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F002",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "尿量",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "当前肌酐 186 μmol/L。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "186",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "current"
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-STATE__change_unit",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "否认药物过敏。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "药物过敏",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "血压",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F002",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "尿量",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "当前肌酐 185 mg/dL。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "185",
+          "unit": "mg/dl",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "current"
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-STATE__flip_negation",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "存在药物过敏。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "药物过敏",
+          "value": null,
+          "unit": null,
+          "polarity": "positive",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "血压",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F002",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "尿量",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "当前肌酐 185 μmol/L。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "185",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "current"
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-STATE__inject_conflict",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "否认药物过敏。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "药物过敏",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "血压",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F002",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "尿量",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "当前肌酐 185 μmol/L。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "185",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "current"
+        },
+        {
+          "key_fact_id": "S_CONFLICT:F001",
+          "source_ids": [
+            "S_CONFLICT"
+          ],
+          "quote": "当前肌酐 186 μmol/L。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "186",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "current"
+        }
+      ]
+    },
+    {
+      "case_id": "CONTROL-STATE__shift_time",
+      "facts": [
+        {
+          "key_fact_id": "S01:F001",
+          "source_ids": [
+            "S01"
+          ],
+          "quote": "否认药物过敏。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "药物过敏",
+          "value": null,
+          "unit": null,
+          "polarity": "negative",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F001",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "血压",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S02:F002",
+          "source_ids": [
+            "S02"
+          ],
+          "quote": "血压未提供；尿量不详。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "observation",
+          "entity": "尿量",
+          "value": null,
+          "unit": null,
+          "polarity": "missing",
+          "duration": null
+        },
+        {
+          "key_fact_id": "S03:F001",
+          "source_ids": [
+            "S03"
+          ],
+          "quote": "既往肌酐 185 μmol/L。",
+          "fields": [
+            "case_features"
+          ],
+          "kind": "measurement",
+          "entity": "肌酐",
+          "value": "185",
+          "unit": "umol/l",
+          "polarity": "positive",
+          "duration": null,
+          "time_scope": "historical"
+        }
+      ]
+    }
+  ]
+}

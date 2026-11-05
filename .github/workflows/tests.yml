@@ -32,6 +32,8 @@ jobs:
           python-version: '3.11'
       - name: Run engineering and protocol tests
         run: python -m unittest discover -s tests -v
+      - name: Regenerate and verify controlled perturbations
+        run: python tools/perturb_cases.py
       - name: Run local mock batch
         run: python tools/run_local_demo.py
       - name: Verify isolated submission package

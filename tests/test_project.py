@@ -250,6 +250,16 @@ class GroundingTests(unittest.TestCase):
 
 
 class IntegrationTests(unittest.TestCase):
+    def test_context_contains_only_current_sources_and_compact_ledger(self):
+        with Server() as server, Workspace(server.url) as work:
+            _, result, log = work.execute()
+            context = json.loads(server.requests[0]["body"]["messages"][1]["content"])
+            self.assertEqual(set(context), {"case", "fact_ledger"})
+            self.assertNotIn("verbatim", json.dumps(context["fact_ledger"]))
+            self.assertEqual(context["case"]["sources"], CASE["sources"])
+            self.assertEqual(log["model_calls"], 1)
+            self.assertGreater(log["cases"][0]["ledger_summary"]["fact_rows"], 0)
+
     def test_end_to_end_and_auth_header_absent(self):
         with Server() as server, Workspace(server.url) as work:
             code, result, log = work.execute()
