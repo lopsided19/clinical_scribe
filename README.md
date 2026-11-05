@@ -72,6 +72,8 @@ python tools/run_local_demo.py
 
 ## 真实模型对照实验
 
+接口尚未提供时，可先运行 `python tools/preflight.py --input data/prepared/cmb/dev.json`，生成不含病例正文的 `artifacts/preflight.json`。它按指定源码目录的实际 `settings.json` 检查输入、运行文件与调用上限，全程不发请求。默认检查项目根目录；与 `run_experiment.py --variant` 的配置不同，详见 `docs/PREFLIGHT.md`。
+
 仅使用赛方允许的模型与已获准开发数据。每次实验复制运行代码、提示词和配置至新的独立目录，保留该次完整版本，禁止覆盖已有实验。
 
 ```powershell
