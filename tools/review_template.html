@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-$script_hash'; style-src 'unsafe-inline'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>$title</title>
+<style>
+:root{font-family:system-ui,"Microsoft YaHei",sans-serif;color:#203340;background:#f3f6f8;line-height:1.7}*{box-sizing:border-box}body{max-width:1500px;margin:auto;padding:28px}header{border-bottom:3px solid #12788b;padding-bottom:16px}h1{font-size:30px;margin:0}h2{font-size:23px;margin:0}h3{font-size:17px;color:#146579;margin:20px 0 8px}p{white-space:pre-wrap;overflow-wrap:anywhere}.subtitle,.muted{color:#526773}.notice{background:#fff3d8;border-left:4px solid #b57d15;padding:12px 18px}.stats{display:flex;gap:16px;flex-wrap:wrap;margin:20px 0}.stat{background:white;border:1px solid #dbe5ea;border-radius:10px;padding:14px 24px;min-width:150px}.stat strong{font-size:26px;display:block;color:#126477}.toolbar{background:#e7f0f4;padding:16px;border-radius:10px;display:flex;gap:12px;flex-wrap:wrap;align-items:end}label{display:block;font-size:14px}input,select,textarea,button{font:inherit;border:1px solid #9eb5c2;border-radius:6px;padding:9px;background:white;color:inherit}input[type=search]{width:260px}button,.file-button{cursor:pointer;padding:9px 16px;border:1px solid #12788b;border-radius:6px;background:white;color:#126477}button.primary{background:#12788b;color:white}.file-button input{display:none}#message{color:#7d5011;min-height:1.6em}article{background:white;border:1px solid #d6e1e7;border-radius:12px;padding:26px;margin:24px 0}.case-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.badge{border-radius:5px;background:#e7f2f5;padding:3px 10px;font-size:14px}.bad{background:#fce8e6;color:#9c3228}.grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}.source{border-left:3px solid #c8dce3;padding:8px 14px;margin:12px 0;scroll-margin-top:20px}.source:target{border-color:#b57d15;background:#fff7df}.source p{margin:4px 0}.warning{background:#fff7e7;border-left:3px solid #c38b21;padding:10px 14px;margin:8px 0}.error{color:#9c3228}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid #dce5eb;text-align:left;vertical-align:top;padding:9px;min-width:90px}td.quote{min-width:180px;max-width:320px;overflow-wrap:anywhere}summary{cursor:pointer;font-weight:600;color:#146579;padding:12px 0}a{color:#08748a}ol,ul{padding-left:22px}li{margin:8px 0}.review-form{padding-top:14px;margin-top:22px;border-top:1px solid #dce5eb}.review-form select{margin-bottom:10px}.notes{width:100%;min-height:100px;resize:vertical}.cutoff{color:#526773;margin:6px 0}.empty{padding:18px;color:#526773}.noscript{background:#fce8e6;padding:14px}
+@media(max-width:850px){.grid{grid-template-columns:1fr}body{padding:12px}article{padding:18px}.stat{min-width:120px;padding:12px}h1{font-size:25px}}
+@media print{.toolbar,#search,#message,.review-form,#progress{display:none}article{break-before:page;border:0}.grid{display:block}details{display:block}}
+</style></head><body>
+<header><h1>$title</h1><p class="subtitle">对照原文与生成结果，定位问题，保存独立复核意见。</p></header>
+<p class="notice">$notice</p>
+<div class="stats">$summary</div>
+<div class="toolbar">
+<label>病例编号<input id="search" type="search" placeholder="输入编号筛选"></label>
+<label>复核范围<select id="filter"><option value="all">全部病例</option><option value="flagged">有规则提示</option><option value="failed">失败或格式无效</option><option value="missing">有遗漏候选</option><option value="unreviewed">尚未复核</option></select></label>
+<label>评审编号<input id="reviewer" placeholder="例如 reviewer-01" maxlength="100"></label>
+<button id="export" class="primary" type="button">导出复核意见</button>
+<label class="file-button">导入意见<input id="import" type="file" accept="application/json,.json"></label>
+</div>
+<p class="muted">意见仅保留在当前页面，离开前请导出。导入文件须对应同一批输入与输出。规则提示供人工复核，不自动改写病历。</p>
+<p id="message" role="status" aria-live="polite"></p><p id="progress" class="muted"></p>
+<noscript><p class="noscript">浏览器未启用脚本，仍可查看病例；筛选和意见导入导出不可用。</p></noscript>
+<main>$cards</main>
+<script id="review-data" type="application/json">$data</script><script>$script</script>
+</body></html>

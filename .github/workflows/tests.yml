@@ -32,6 +32,8 @@ jobs:
           python-version: '3.11'
       - name: Run engineering and protocol tests
         run: python -m unittest discover -s tests -v
+      - name: Check offline review script interactions
+        run: node tests/review_ui.test.cjs
       - name: Regenerate and verify controlled perturbations
         run: python tools/perturb_cases.py
       - name: Run local mock batch

@@ -19,6 +19,7 @@ from src.io_utils import atomic_json, file_digest, read_json
 from src.runner import code_manifest
 from tools.build_submission import build_algorithm, build_results
 from tools.mock_server import MockHandler
+from tools.run_integrity import load_verified_run
 
 
 def main():
@@ -33,6 +34,17 @@ def main():
     if tests.returncode:
         print(text)
         raise SystemExit(tests.returncode)
+    ui = subprocess.run(["node", "tests/review_ui.test.cjs"], cwd=ROOT, capture_output=True,
+                        text=True, encoding="utf-8", errors="replace")
+    ui_text = ui.stdout + ui.stderr
+    (artifacts / "review_ui_tests.txt").write_text(ui_text, encoding="utf-8")
+    ui_count = re.search(r"(\d+) offline review interaction checks passed", ui_text)
+    result["checks"]["offline_review_script"] = {"passed": ui.returncode == 0,
+        "count": int(ui_count.group(1)) if ui_count else None,
+        "kind": "in_memory_script_checks_not_browser_validation"}
+    if ui.returncode:
+        print(ui_text)
+        raise SystemExit(ui.returncode)
     regression = read_json(ROOT / "data/synthetic/perturbations/regression.json")
     assert regression["passed"] == regression["generated_cases"]
     result["checks"]["controlled_stale_echo_regression"] = {
@@ -87,6 +99,8 @@ def main():
             assert directory.parent == sandbox.resolve()
     latest = read_json(artifacts / "latest_local_demo.json")
     run_dir = ROOT / latest["run_directory"]
+    load_verified_run(run_dir)
+    result["checks"]["batch_frozen_run_integrity"] = True
     log = read_json(run_dir / "run_log.json")
     result["checks"]["batch_mock"] = latest
     result["checks"]["batch_source_matches_current"] = log["code_files"] == code_manifest(ROOT)

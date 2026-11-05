@@ -17,4 +17,6 @@
 
 推荐 CSV 列：`case_id,variant_blinded,reviewer_id,fact_errors,negation_missing_errors,reasoning_errors,plan_errors,traceability_errors,critical_error,needs_adjudication,notes`。统计前保留原始意见，任何修改记录理由。
 
+本地 `review.html` 支持逐例记录结论与自由文本意见并导出 JSON，操作见 `REVIEW_WORKBENCH.md`。该页面是单次结果复核工具，会显示结果来源信息，不提供方法盲法或上述细分维度的自动量化；正式盲评应另行分配匿名方法编号并隐藏方法信息。未经临床评审的工程演示意见不能当作医学专家评分。
+
 当前项目未填入不存在的专家评分。CMB 原参考答案可以辅助理解教学问题，但其中可能包含原描述没有的事实，不能用其反向补造输入或直接当作首程标准答案。

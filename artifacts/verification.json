@@ -1,11 +1,16 @@
 {
-  "started_at": "2026-11-05T07:17:09.567475+00:00",
+  "started_at": "2026-11-05T07:37:23.516407+00:00",
   "python_version": "3.11.9",
   "kind": "engineering_verification_not_clinical_validation",
   "checks": {
     "unit_tests": {
       "passed": true,
-      "count": 117
+      "count": 139
+    },
+    "offline_review_script": {
+      "passed": true,
+      "count": 10,
+      "kind": "in_memory_script_checks_not_browser_validation"
     },
     "controlled_stale_echo_regression": {
       "passed": 19,
@@ -20,10 +25,11 @@
       "outside_working_directory": true
     },
     "mock_results_rejected": true,
+    "batch_frozen_run_integrity": true,
     "batch_mock": {
       "kind": "LOCAL_MOCK_ENGINEERING_ONLY",
       "python": "3.11.9",
-      "run_directory": "artifacts/local_mock_20261105T071649739832Z/run",
+      "run_directory": "artifacts/local_mock_20261105T073711963525Z/run",
       "input_cases": 142,
       "successful_cases": 142,
       "schema_valid_cases": 142,
@@ -58,7 +64,7 @@
   },
   "package": {
     "file": "LOCAL_PREVIEW_algorithm.zip",
-    "sha256": "36a3e663d65d06a4ab25cb1ce4911ca5a72eba31d1d6bd1ffe5ad89608d71577",
+    "sha256": "6d17554f728e69bc9a80061dd65bb7ba5853d45e11f80721980a1a6c69e7a557",
     "files": [
       "main.py",
       "requires.txt",
@@ -107,5 +113,5 @@
     "completed": false,
     "reason": "赛方模型接口和最终限制尚未提供"
   },
-  "finished_at": "2026-11-05T07:17:11.684354+00:00"
+  "finished_at": "2026-11-05T07:37:26.760318+00:00"
 }

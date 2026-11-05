@@ -9,6 +9,7 @@
 - 已提供真实模型实验工具、模拟接口、自动测试、离线结果复核页面生成器和提交打包工具。
 - 校验同时核对常见指标的数值与单位组合，提示相同数值被改换单位和事实引用遗漏单位；不擅自换算单位。
 - 事实台账按来源位置记录时间、肯否/缺失状态和病程；开发评估支持独立的关键事实标注与遗漏覆盖检查，并提供 7 类操作、19 例受控扰动。见 `docs/FACT_COVERAGE.md`。
+- 离线复核页面支持原文定位、规则与遗漏筛选、独立意见导入导出；实验对比核验冻结文件和逐例日志，分别报告失败、覆盖和调用成本。见 `docs/REVIEW_WORKBENCH.md`。
 - **尚无主办方实际接口及最终调用限制。真实 Qwen 医学效果、改进收益和正式环境适配尚未完成验证。MOCK 输出只证明工程链路，不能作为正式结果。**
 - 2026-11-04 已核查公开官网、临床智录资料分类及公告手册，未找到实际模型配置。核查证据、报名日期和接入渠道见 `docs/OFFICIAL_INTERFACE_CHECK.md`。
 
@@ -21,7 +22,7 @@ python -m pip install -r requires.txt
 python main.py
 ```
 
-运行依赖全部来自 Python 标准库，`requires.txt` 为可由 pip 读取的空依赖清单。开发测试工具也只使用标准库；项目说明 PDF 的重新生成单独需要 reportlab，不属于正式运行依赖。
+运行依赖全部来自 Python 标准库，`requires.txt` 为可由 pip 读取的空依赖清单。Python 开发工具也只使用标准库；复核脚本交互测试使用 Node.js 内置模块，`verify_project.py` 需要可用的 `node`。项目说明 PDF 重新生成单独需要 reportlab，均不属于正式运行依赖。
 
 主办方在根目录提供 `.env` 和 `input.json`。`.env` 仅含：
 
@@ -66,7 +67,7 @@ ENDPOINT=主办方完整推理请求地址
 python tools/run_local_demo.py
 ```
 
-打开 `artifacts/local_demo_review.html` 查看原始资料与模拟输出。该输出有醒目标识，只回显资料，不代表真实病历生成效果。根目录不自动创建 `.env`，模拟配置局限在演示目录中。
+打开 `artifacts/local_demo_review.html` 查看原始资料、模拟输出、规则提示与事实台账；可筛选问题病例并导出人工意见。该输出有醒目标识，只回显资料，不代表真实病历生成效果。意见离开页面前需导出，根目录不自动创建 `.env`，模拟配置局限在演示目录中。
 
 ## 真实模型对照实验
 
@@ -75,20 +76,22 @@ python tools/run_local_demo.py
 ```powershell
 python tools/run_experiment.py --input data/prepared/cmb/dev.json --env .env --variant baseline
 python tools/run_experiment.py --input data/prepared/cmb/dev.json --env .env --variant grounded
+python tools/compare_runs.py --baseline BASELINE_RUN_DIR --candidate CANDIDATE_RUN_DIR --report artifacts/comparison.json
 ```
 
 赛方允许足够预算后再测试 `--variant extract_generate` 或 `--variant repair`。数据的 `holdout.json` 应在方法冻结后用于最终开发评估；本地 MOCK 为工程测试已遍历所有输入，不等于真实模型已在留出集上调参。公开基准可能已被模型预训练看到，不能宣称无污染。
 
-每次输出含 `metrics.json` 与 `review.html`。自动指标仅为结构成功率、来源检查和数字一致性等工程指标，不是比赛总分。医学维度需按 `docs/CLINICAL_REVIEW.md` 人工评价。详见 `docs/EXPERIMENT_PLAN.md`。
+每次输出含 `metrics.json` 与 `review.html`。`--annotations` 可提供独立开发标注，仅用于运行后评价，生成程序不读取。对比工具验证文件与日志一致性，拒绝 MOCK、不同输入、模型名或已记录的接口地址；披露配置与提示词变化、成功回退、逐例警告、覆盖与调用成本。缺失 token 不补零。哈希不能认证模型身份或阻止文件与日志联合篡改。医学维度需按 `docs/CLINICAL_REVIEW.md` 人工评价。
 
 ## 测试与打包
 
 ```powershell
 python -m unittest discover -s tests -v
+node tests/review_ui.test.cjs
 python tools/build_submission.py --team-id YOUR_TEAM_ID
 ```
 
-仓库的 GitHub Actions 会在 Windows、Linux 的 Python 3.11 上执行工程测试、19 例受控扰动回归、142 例本机 MOCK 批处理与独立算法 ZIP 验证。CI 不使用真实模型、密钥或正式病例。实际测试数量及结果见 `artifacts/verification.json`；远程 CI 状态以 Actions 页面为准。
+仓库的 GitHub Actions 会在 Windows、Linux 上执行 Python 3.11 工程测试、10 项复核脚本交互检查、19 例受控扰动回归、142 例本机 MOCK 批处理与独立算法 ZIP 验证。脚本检查使用内存 DOM 桩，不等于浏览器兼容性验收。CI 不使用真实模型、密钥或正式病例。实际测试数量及结果见 `artifacts/verification.json`；远程 CI 状态以 Actions 页面为准。
 
 算法 ZIP 根目录直接包含入口、提示词、源码、配置和说明；排除实际 `.env`、病例数据、答案、模拟服务和任何预生成输出。打包器不上传任何内容。
 

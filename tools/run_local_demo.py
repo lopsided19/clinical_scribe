@@ -36,7 +36,8 @@ def main():
     try:
         process = subprocess.run([sys.executable, str(ROOT / "tools/run_experiment.py"),
             "--input", str(base / "combined_input.json"), "--env", str(env),
-            "--variant", "grounded", "--run-dir", str(base / "run")])
+            "--variant", "grounded", "--run-dir", str(base / "run"),
+            "--annotations", str(ROOT / "data/synthetic/perturbations/coverage_annotations.json")])
         if process.returncode:
             raise SystemExit(process.returncode)
         metrics = read_json(base / "run/metrics.json")

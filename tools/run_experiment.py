@@ -23,7 +23,11 @@ def main():
     parser.add_argument("--variant", choices=["baseline", "grounded", "extract_generate", "repair"], default="grounded")
     parser.add_argument("--run-dir", type=Path)
     parser.add_argument("--max-calls", type=int, help="Must conform to organizer limits")
+    parser.add_argument("--annotations", type=Path, help="仅用于运行后的独立开发评价，不提供给模型")
     args = parser.parse_args()
+    annotations = read_json(args.annotations) if args.annotations else None
+    if args.annotations:
+        evaluate(read_json(args.input), [], annotations=annotations)
     target = (args.run_dir or ROOT / "artifacts/runs" / (datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ") + "_" + args.variant)).resolve()
     if target.exists() and any(target.iterdir()):
         parser.error("run-dir 已非空；禁止覆盖既有实验")
@@ -46,8 +50,10 @@ def main():
     if process.returncode != 0:
         raise SystemExit(process.returncode)
     inputs, outputs, log = (read_json(target / name) for name in ("input.json", "output.json", "run_log.json"))
-    atomic_json(target / "metrics.json", evaluate(inputs, outputs, log))
-    (target / "review.html").write_text(render(inputs, outputs), encoding="utf-8")
+    if args.annotations:
+        atomic_json(target / "review_annotations.json", annotations)
+    atomic_json(target / "metrics.json", evaluate(inputs, outputs, log, annotations))
+    (target / "review.html").write_text(render(inputs, outputs, log=log, annotations=annotations), encoding="utf-8")
     print(target)
 
 
