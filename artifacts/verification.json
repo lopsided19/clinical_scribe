@@ -1,11 +1,11 @@
 {
-  "started_at": "2026-11-06T09:26:17.138811+00:00",
+  "started_at": "2026-11-06T09:45:33.152663+00:00",
   "python_version": "3.11.9",
   "kind": "engineering_verification_not_clinical_validation",
   "checks": {
     "unit_tests": {
       "passed": true,
-      "count": 201
+      "count": 211
     },
     "offline_review_script": {
       "passed": true,
@@ -113,5 +113,5 @@
     "completed": false,
     "reason": "赛方模型接口和最终限制尚未提供"
   },
-  "finished_at": "2026-11-06T09:26:25.240110+00:00"
+  "finished_at": "2026-11-06T09:45:42.959231+00:00"
 }
