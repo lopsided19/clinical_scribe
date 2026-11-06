@@ -110,7 +110,7 @@ python tools/build_submission.py --team-id YOUR_TEAM_ID --run-dir .
 
 打包器核对输入、输出、代码、提示词与配置哈希，拒绝把带 `MOCK` 模型标识的测试输出当作正式结果。拒绝 MOCK 不能认证任意自定义服务是真实指定模型，实际模型及版本仍须赛方核实。
 
-原规则正文要求 `results.json`，技术附件要求运行产物 `output.json`。当前打包器保留二者的相同字节副本，并附原始日志；最终应向赛方确认打包口径。算法运行始终生成技术附件要求的 `output.json`。
+根据用户于 2026-11-06 转述的赛题组答复，文件命名冲突以技术规范为准：程序生成 `output.json`，结果包 `队伍编号_results.zip` 内保存原始 `output.json` 与 `run_log.json`，不另生成 `results.json`。答复未取消运行记录要求，也未要求更改结果 ZIP 名称；正文与日志逐字节保留。
 
 ## 数据、检索和适用范围
 

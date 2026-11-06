@@ -43,7 +43,7 @@ def build():
         canvas.setFillColor(blue)
         canvas.drawString(48, height - 29, "临床智录  /  方法与工程说明")
         canvas.setFillColor(colors.HexColor("#687d87"))
-        canvas.drawString(48, 28, "2026.11.05  ·  真实模型验证待完成")
+        canvas.drawString(48, 28, "2026.11.06  ·  真实模型验证待完成")
         canvas.drawRightString(width - 48, 28, str(document.page))
         canvas.restoreState()
 

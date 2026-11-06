@@ -26,10 +26,13 @@ class SubmissionReviewTests(unittest.TestCase):
     def tearDown(self): self.temp.cleanup()
 
     def test_result_package_preserves_bytes_and_failed_record(self):
+        # A stale file from an older packaging convention must never enter the ZIP.
+        (self.b / "results.json").write_text('["stale"]', encoding="utf-8")
         package = build_results("TEST", self.root / "zip", self.b, self.b)
         with zipfile.ZipFile(self.root / "zip" / package["file"]) as archive:
-            self.assertEqual(archive.read("results.json"), (self.b / "output.json").read_bytes())
-            self.assertEqual(archive.read("output.json"), archive.read("results.json"))
+            self.assertCountEqual(archive.namelist(), ["output.json", "run_log.json"])
+            self.assertEqual(archive.read("output.json"), (self.b / "output.json").read_bytes())
+            self.assertEqual(archive.read("run_log.json"), (self.b / "run_log.json").read_bytes())
 
     def test_result_packaging_rejects_false_call_count(self):
         log = read_json(self.a / "run_log.json"); log["model_calls"] = 999

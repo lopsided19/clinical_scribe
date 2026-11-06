@@ -1,5 +1,5 @@
 {
-  "started_at": "2026-11-05T14:19:11.966647+00:00",
+  "started_at": "2026-11-06T02:48:01.155073+00:00",
   "python_version": "3.11.9",
   "kind": "engineering_verification_not_clinical_validation",
   "checks": {
@@ -64,7 +64,7 @@
   },
   "package": {
     "file": "LOCAL_PREVIEW_algorithm.zip",
-    "sha256": "77a32b5100fcb0650613591755899ab20914968845d2458a6e8796ddae09dacd",
+    "sha256": "53cbbc03a3c69e7071d2cf48ef898eb9bd1ed5a4c314eb9ddfb1220204a70993",
     "files": [
       "main.py",
       "requires.txt",
@@ -113,5 +113,5 @@
     "completed": false,
     "reason": "赛方模型接口和最终限制尚未提供"
   },
-  "finished_at": "2026-11-05T14:19:17.232563+00:00"
+  "finished_at": "2026-11-06T02:48:07.204340+00:00"
 }

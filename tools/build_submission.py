@@ -49,11 +49,10 @@ def build_results(team: str, directory: Path, run: Path, source: Path = ROOT) ->
     target = directory / f"{team}_results.zip"
     directory.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED) as archive:
-        archive.write(run / "output.json", "results.json")
         archive.write(run / "output.json", "output.json")
         archive.write(run / "run_log.json", "run_log.json")
     return {"file": target.name, "sha256": file_digest(target),
-            "note": "正文逐字节保留，results.json 与 output.json 相同；赛方最终打包口径待确认。"}
+            "note": "按技术规范保留 output.json 与原始 run_log.json；正文逐字节保留，不另生成 results.json。"}
 
 
 def main():
