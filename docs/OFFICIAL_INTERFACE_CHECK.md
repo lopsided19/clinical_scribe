@@ -60,7 +60,7 @@ python tools/check_model_connection.py --check-only
 python tools/check_model_connection.py
 ```
 
-第一条只检查本地配置，不联网。第二条仅向 `.env` 中的完整地址发送 1 次简单 JSON 请求，最多 128 个输出 token；该请求应在赛方允许的开发/调试预算中使用。结果保存至 `artifacts/model_access_check.json`。连通性通过不等于确认模型版本或赛方授权，更不等于医学质量已验证。
+第一条只检查本地配置，不联网。第二条仅向 `.env` 中的完整地址发送 1 次简单 JSON 请求，默认最多 128 个输出 token；该请求应在赛方允许的开发/调试预算中使用。可通过 `--settings-dir` 选择明确的思考模式配置，或在获准预算内用 `--max-tokens` 调整探测上限，不能超过所选配置。报告区分收到 HTTP 响应与最终 JSON 成功，避免把思考截断误认为没有连通。结果保存至 `artifacts/model_access_check.json`。连通性通过不等于确认模型版本或赛方授权，更不等于医学质量已验证。具体候选配置与实验步骤见 `QWEN38_READINESS.md`。
 
 本次执行了只检查配置的命令；根目录尚无 `.env`，记录状态为等待官方配置，发出 0 次模型请求。未拿示例占位符尝试连接，也未创建虚构的正式配置。
 

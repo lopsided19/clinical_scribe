@@ -18,6 +18,9 @@ DEFAULTS = {
     "send_sampling_parameters": True,
     "enable_repair": False, "quality_action": "warn",
     "grounding_checks": True,
+    "qwen_parameter_style": "disabled",
+    "enable_thinking": None, "preserve_thinking": None, "reasoning_effort": None,
+    "top_k": None, "min_p": None, "presence_penalty": None, "repetition_penalty": None,
 }
 
 
@@ -84,6 +87,25 @@ def load_settings(root: Path) -> dict:
     for key in ("send_seed", "send_response_format", "send_sampling_parameters", "enable_repair", "grounding_checks"):
         if type(result[key]) is not bool:
             raise ConfigError("SETTINGS_INVALID", f"{key} 必须是布尔值。")
+    if not isinstance(result["qwen_parameter_style"], str) or result["qwen_parameter_style"] not in {"disabled", "chat_template_kwargs", "top_level"}:
+        raise ConfigError("SETTINGS_INVALID", "qwen_parameter_style 无效。")
+    for key in ("enable_thinking", "preserve_thinking"):
+        if result[key] is not None and type(result[key]) is not bool:
+            raise ConfigError("SETTINGS_INVALID", f"{key} 必须为布尔值或 null。")
+    effort = result["reasoning_effort"]
+    if effort is not None and (not isinstance(effort, str) or effort not in {"low", "medium", "xhigh"}):
+        raise ConfigError("SETTINGS_INVALID", "reasoning_effort 应为 low、medium、xhigh 或 null。")
+    if result["qwen_parameter_style"] == "disabled" and any(result[k] is not None for k in ("enable_thinking", "preserve_thinking", "reasoning_effort")):
+        raise ConfigError("SETTINGS_INVALID", "设置思考选项前须明确 qwen_parameter_style。")
+    if effort is not None and result["enable_thinking"] is not True:
+        raise ConfigError("SETTINGS_INVALID", "设置 reasoning_effort 时须显式启用思考。")
+    if result["top_k"] is not None and (type(result["top_k"]) is not int or result["top_k"] <= 0):
+        raise ConfigError("SETTINGS_INVALID", "top_k 必须为正整数或 null。")
+    for key, low, high in (("min_p", 0, 1), ("presence_penalty", -2, 2), ("repetition_penalty", 0, None)):
+        value = result[key]
+        if value is not None and (type(value) not in {int, float} or not math.isfinite(value) or value < low or
+                                  (high is not None and value > high) or (key == "repetition_penalty" and value == 0)):
+            raise ConfigError("SETTINGS_INVALID", f"{key} 超出范围。")
     minimum = 2 if result["pipeline"] == "extract_generate" else 1
     if result["max_calls_per_case"] < minimum:
         raise ConfigError("SETTINGS_INVALID", "调用预算不足以运行所选流水线。")

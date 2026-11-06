@@ -23,7 +23,7 @@ def build():
     width, height = A4
     blue = colors.HexColor("#126b7a")
     dark = colors.HexColor("#203747")
-    text = ParagraphStyle("body", fontName="CNSong", fontSize=10.5, leading=17,
+    text = ParagraphStyle("body", fontName="CNSong", fontSize=10.5, leading=16,
                           textColor=dark, wordWrap="CJK", spaceAfter=8, alignment=TA_LEFT)
     heading = ParagraphStyle("heading", fontName="CNHei", fontSize=14, leading=21,
                              textColor=blue, wordWrap="CJK", spaceBefore=13, spaceAfter=8, keepWithNext=True)

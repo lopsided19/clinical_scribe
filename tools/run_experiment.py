@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.config import DEFAULTS
+from src.config import DEFAULTS, load_settings
 from src.io_utils import atomic_json, read_json
 from tools.evaluate import evaluate
 from tools.review_report import render
@@ -23,8 +23,12 @@ def main():
     parser.add_argument("--variant", choices=["baseline", "grounded", "extract_generate", "repair"], default="grounded")
     parser.add_argument("--run-dir", type=Path)
     parser.add_argument("--max-calls", type=int, help="Must conform to organizer limits")
+    parser.add_argument("--settings-dir", type=Path, help="读取该目录 settings.json 作为基础配置；方法与调用预算仍由 variant/max-calls 决定")
     parser.add_argument("--annotations", type=Path, help="仅用于运行后的独立开发评价，不提供给模型")
     args = parser.parse_args()
+    if args.settings_dir and not (args.settings_dir / "settings.json").is_file():
+        parser.error("settings-dir 缺少 settings.json")
+    base_settings = load_settings(args.settings_dir) if args.settings_dir else DEFAULTS.copy()
     annotations = read_json(args.annotations) if args.annotations else None
     if args.annotations:
         evaluate(read_json(args.input), [], annotations=annotations)
@@ -38,7 +42,7 @@ def main():
         shutil.copy2(ROOT / name, target / name)
     shutil.copy2(args.env, target / ".env")
     shutil.copy2(args.input, target / "input.json")
-    settings = DEFAULTS.copy()
+    settings = base_settings
     settings.update(pipeline="grounded" if args.variant == "repair" else args.variant,
                     max_calls_per_case=3 if args.variant == "repair" else (2 if args.variant == "extract_generate" else 1),
                     enable_repair=args.variant == "repair",

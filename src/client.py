@@ -40,6 +40,14 @@ class ModelClient:
                     "max_tokens": settings["max_tokens"]}
             if settings["send_sampling_parameters"]:
                 body.update(temperature=settings["temperature"], top_p=settings["top_p"])
+                body.update({k: settings[k] for k in ("top_k", "min_p", "presence_penalty", "repetition_penalty") if settings.get(k) is not None})
+            thinking = {k: settings[k] for k in ("enable_thinking", "preserve_thinking") if settings.get(k) is not None}
+            if settings.get("qwen_parameter_style") == "chat_template_kwargs" and thinking:
+                body["chat_template_kwargs"] = thinking
+            elif settings.get("qwen_parameter_style") == "top_level":
+                body.update(thinking)
+            if settings.get("reasoning_effort") is not None:
+                body["reasoning_effort"] = settings["reasoning_effort"]
             if settings["send_seed"]:
                 body["seed"] = settings["seed"]
             if settings["send_response_format"]:
@@ -84,10 +92,12 @@ class ModelClient:
                         raise CaseError("MODEL_FINISH_REASON_INVALID", "模型未以约定的正常完成状态结束。")
                     if not isinstance(choice.get("message"), dict):
                         raise ValueError("message must be an object")
-                    content = choice["message"]["content"]
+                    content = choice["message"].get("content")
                     if isinstance(content, list):
                         content = "".join(part["text"] for part in content if isinstance(part, dict) and part.get("type") == "text")
                     if not isinstance(content, str) or not content.strip():
+                        if any(isinstance(choice["message"].get(k), str) and choice["message"][k].strip() for k in ("reasoning_content", "reasoning")):
+                            raise CaseError("MODEL_NO_FINAL_CONTENT", "接口返回了思考内容，但缺少最终正文；需核对思考模式及输出预算。")
                         raise ValueError("empty model content")
                 except (ValueError, KeyError, IndexError, TypeError, UnicodeError) as exc:
                     raise CaseError("MODEL_RESPONSE_INVALID", "模型接口返回结构不符合 Chat Completions 协议。") from exc
